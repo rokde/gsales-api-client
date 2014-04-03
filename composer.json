@@ -1,0 +1,21 @@
+{
+    "name": "rokde/gsales-api-client",
+    "description": "SOAP Client for consumin gSales API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert Kummer",
+            "email": "rok@ipunkt.biz"
+        }
+    ],
+    "require": {
+	    "php": "5.4",
+	    "ext-soap": "*"
+    },
+	"autoload": {
+		"psr-4": {
+			"Rokde\\": "src/rokde"
+		}
+	},
+    "minimum-stability": "dev"
+}
