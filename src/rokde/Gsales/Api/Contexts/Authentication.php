@@ -13,7 +13,7 @@ use Rokde\Gsales\Api\Exceptions\ApiException;
 use Rokde\Gsales\Api\Exceptions\CustomerAuthenticationException;
 use Rokde\Gsales\Api\Exceptions\CustomerFrontendException;
 use Rokde\Gsales\Api\Exceptions\CustomerNotFoundException;
-use Rokde\Gsales\Api\Types\Customer;
+use Rokde\Gsales\Api\Types\CustomerType;
 
 class Authentication extends Api {
 
@@ -26,7 +26,7 @@ class Authentication extends Api {
 	 */
 	public function passwordLost($customer, $newPassword)
 	{
-		$customerId = ($customer instanceof Customer) ? $customer->getId() : $customer;
+		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
 		$password = $this->prepareMd5PasswordParameter($newPassword);
 
 		return $this->call('customerFrontendPasswordLost', ['customerid' => $customerId, 'md5password' => $password]);
@@ -41,7 +41,7 @@ class Authentication extends Api {
 	 */
 	public function changePassword($customer, $newPassword)
 	{
-		$customerId = ($customer instanceof Customer) ? $customer->getId() : $customer;
+		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
 		$password = $this->prepareMd5PasswordParameter($newPassword);
 
 		return $this->call('changeCustomerFrontendPassword', ['customerid' => $customerId, 'md5password' => $password]);
@@ -131,7 +131,7 @@ class Authentication extends Api {
 	 */
 	public function enableLoginById($customer)
 	{
-		$customerId = ($customer instanceof Customer) ? $customer->getId() : $customer;
+		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
 
 		return $this->call('enableCustomerFrontendLoginById', ['customerid' => $customerId]);
 	}
@@ -179,7 +179,7 @@ class Authentication extends Api {
 	 */
 	public function disableLoginById($customer)
 	{
-		$customerId = ($customer instanceof Customer) ? $customer->getId() : $customer;
+		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
 
 		return $this->call('disableCustomerFrontendLoginById', ['customerid' => $customerId]);
 	}
@@ -207,7 +207,7 @@ class Authentication extends Api {
 	private function prepareCustomerNumberOrEmailParameter($customer, $forceEmail, $forceCustomerNumber)
 	{
 		$customerNoOrEmail = $customer;
-		if ($customer instanceof Customer)
+		if ($customer instanceof CustomerType)
 		{
 			$customerNoOrEmail = $customer->getCustomerNumberOrEmail();
 			if ($forceEmail) {
