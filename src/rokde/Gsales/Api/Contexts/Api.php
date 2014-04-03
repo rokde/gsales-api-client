@@ -99,6 +99,12 @@ class Api
 			'ContractBaseFilterable' => $namespace . '\Types\Contract\BaseFilterable',
 			'ContractPosition' => $namespace . '\Types\Contract\Position',
 			'ContractSumm' => $namespace . '\Types\Contract\Sum',
+
+			'QueueEntry' => $namespace . '\Types\QueueType',
+
+			'MailspoolEntry' => $namespace . '\Types\MailspoolType',
+			'Attachement' => $namespace . '\Types\Attachment',
+
 		);
 	}
 
