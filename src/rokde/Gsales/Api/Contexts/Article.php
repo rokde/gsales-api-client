@@ -42,7 +42,7 @@ class Article extends Api {
 	}
 
 	/**
-	 * returns the number of newsletters returned by filter
+	 * returns the number of articles returned by filter
 	 *
 	 * @param Filter[] $filter
 	 * @return int
@@ -88,4 +88,4 @@ class Article extends Api {
 
 		return $this->call('deleteArticle', ['articleid' => $articleId]);
 	}
-} 
+}

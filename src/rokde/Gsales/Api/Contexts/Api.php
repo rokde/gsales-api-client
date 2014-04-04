@@ -111,6 +111,10 @@ class Api
 			'Article' => $namespace . '\Types\ArticleType',
 
 			'Document' => $namespace . '\Types\DocumentType',
+
+			'Comment' => $namespace . '\Types\CommentType',
+
+			'User' => $namespace . '\Types\UserType',
 		);
 	}
 
@@ -245,4 +249,4 @@ class Api
 
 		return $params;
 	}
-} 
+}
