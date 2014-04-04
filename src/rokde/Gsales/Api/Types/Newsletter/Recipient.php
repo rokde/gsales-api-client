@@ -149,4 +149,4 @@ class Recipient extends BaseRecipient implements IdentifierInterface {
 	{
 		return $this->spool_id;
 	}
-} 
+}

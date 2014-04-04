@@ -108,6 +108,7 @@ class Api
 			'Newsletter' => $namespace . '\Types\NewsletterType',
 			'NewsletterRecipient' => $namespace . '\Types\Newsletter\Recipient',
 
+			'Article' => $namespace . '\Types\ArticleType',
 		);
 	}
 
