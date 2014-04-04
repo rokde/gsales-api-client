@@ -199,7 +199,13 @@ class Api
 			/** @var Status $status */
 			$status = $response['status'];
 			if (!$status->isSuccessful()) {
-				throw new SoapApiException($status->getMessage(), $status->getCode(), $this->client);
+				$message = $status->getMessage();
+				if (empty($message))
+				{
+					$message = Status::getStatusMessage($status->getCode());
+				}
+
+				throw new SoapApiException($message, $status->getCode(), $this->client);
 			}
 		}
 
