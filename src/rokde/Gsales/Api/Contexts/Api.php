@@ -105,6 +105,9 @@ class Api
 			'MailspoolEntry' => $namespace . '\Types\MailspoolType',
 			'Attachement' => $namespace . '\Types\Attachment',
 
+			'Newsletter' => $namespace . '\Types\NewsletterType',
+			'NewsletterRecipient' => $namespace . '\Types\Newsletter\Recipient',
+
 		);
 	}
 
