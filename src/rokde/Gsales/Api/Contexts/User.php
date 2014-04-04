@@ -10,6 +10,7 @@ namespace Rokde\Gsales\Api\Contexts;
 
 
 use Rokde\Gsales\Api\Types\Filter;
+use Rokde\Gsales\Api\Types\RoleType;
 use Rokde\Gsales\Api\Types\Sort;
 use Rokde\Gsales\Api\Types\User\Base;
 use Rokde\Gsales\Api\Types\UserType;
@@ -109,5 +110,58 @@ class User extends Api {
 	public function unlock($user)
 	{
 		return $this->modifyState('unlockUser', 'userid', $user);
+	}
+
+	/**
+	 * returns a collection of all roles
+	 *
+	 * @return \Rokde\Gsales\Api\Types\RoleType[]
+	 */
+	public function availableRoles()
+	{
+		return $this->call('getAvailableRoles');
+	}
+
+	/**
+	 * returns roles for user
+	 *
+	 * @param int|UserType $user
+	 * @return \Rokde\Gsales\Api\Types\RoleType[]
+	 */
+	public function roles($user)
+	{
+		$userId = ($user instanceof UserType) ? $user->getId() : $user;
+
+		return $this->call('getRolesOfUser', ['userid' => $userId]);
+	}
+
+	/**
+	 * adds a role to user
+	 *
+	 * @param int|UserType $user
+	 * @param int|RoleType $role
+	 * @return \Rokde\Gsales\Api\Types\RoleType[]
+	 */
+	public function addRole($user, $role)
+	{
+		$userId = ($user instanceof UserType) ? $user->getId() : $user;
+		$roleId = ($role instanceof RoleType) ? $role->getId() : $role;
+
+		return $this->call('addRoleToUser', ['userid' => $userId, 'roleid' => $roleId]);
+	}
+
+	/**
+	 * removes a role from user
+	 *
+	 * @param int|UserType $user
+	 * @param int|RoleType $role
+	 * @return \Rokde\Gsales\Api\Types\RoleType[]
+	 */
+	public function removeRole($user, $role)
+	{
+		$userId = ($user instanceof UserType) ? $user->getId() : $user;
+		$roleId = ($role instanceof RoleType) ? $role->getId() : $role;
+
+		return $this->call('removeRoleFromUser', ['userid' => $userId, 'roleid' => $roleId]);
 	}
 }

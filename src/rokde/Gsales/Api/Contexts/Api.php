@@ -115,6 +115,8 @@ class Api
 			'Comment' => $namespace . '\Types\CommentType',
 
 			'User' => $namespace . '\Types\UserType',
+
+			'Role' => $namespace . '\Types\RoleType',
 		);
 	}
 
