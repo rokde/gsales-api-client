@@ -60,6 +60,29 @@ class Base extends Type {
 	protected $approval = Approval::NOT_APPROVED;
 
 	/**
+	 * sets customer id
+	 * 
+	 * @param int|CustomerType $customer
+	 * @return $this
+	 */
+	public function setCustomerId($customer)
+	{
+		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		
+		$this->customers_id = $customerId;
+		return $this;
+	}
+
+	/**
+	 * returns customer id
+	 * @return int
+	 */
+	public function getCustomerId()
+	{
+		return $this->customers_id;
+	}
+
+	/**
 	 * sets discount
 	 *
 	 * @param float $discount
@@ -220,9 +243,9 @@ class Base extends Type {
 	 * @param int|\Rokde\Gsales\Api\Contracts\Approval $approval
 	 * @return $this
 	 */
-	public function setApproval(Approval $approval)
+	public function setApproval($approval)
 	{
-		$this->approval = $approval;
+		$this->approval = (int) $approval;
 		return $this;
 	}
 
