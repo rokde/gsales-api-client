@@ -5,6 +5,7 @@ use Rokde\Gsales\Api\Exceptions\CustomerAuthenticationException;
 use Rokde\Gsales\Api\Exceptions\CustomerFrontendException;
 use Rokde\Gsales\Api\Exceptions\CustomerNotFoundException;
 use Rokde\Gsales\Api\Types\CustomerType;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Authentication
@@ -16,17 +17,33 @@ class Authentication extends Api
 	/**
 	 * Saves a token for the customer so he can set a new password in the frontend
 	 *
-	 * @param Customer|int $customer
-	 * @param string $newPassword
+	 * @param Customer|string $customer customer instance or customer number as string or customer email as string
 	 *
-	 * @return bool
+	 * @throws CustomerAuthenticationException when credentials not set correct
+	 * @throws CustomerNotFoundException when no customer found by credentials
+	 * @throws \Rokde\Gsales\Api\Exceptions\SoapApiException
+	 * @return int
+	 *
+	 * @since api 2.3
 	 */
-	public function passwordLost($customer, $newPassword)
+	public function passwordLost($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
-		$password = $this->prepareMd5PasswordParameter($newPassword);
+		$customerNumberOrEmail = ($customer instanceof CustomerType)
+			? $customer->getCustomerNumberOrEmail()
+			: $customer;
 
-		return $this->call('customerFrontendPasswordLost', ['customerid' => $customerId, 'md5password' => $password]);
+		$result = $this->call('customerFrontendPasswordLost', ['customernooremail' => $customerNumberOrEmail]);
+
+		switch ($result) {
+			case -1:
+				throw new CustomerAuthenticationException('Customer can not be identified by given credentials', -1);
+			case -2:
+				throw new CustomerNotFoundException('Customer not found', -2);
+			case -3:
+				throw new CustomerAuthenticationException('Token could not be set', -3);
+		}
+
+		return $result;
 	}
 
 	/**
@@ -39,7 +56,7 @@ class Authentication extends Api
 	 */
 	public function changePassword($customer, $newPassword)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 		$password = $this->prepareMd5PasswordParameter($newPassword);
 
 		return $this->call('changeCustomerFrontendPassword', ['customerid' => $customerId, 'md5password' => $password]);
@@ -128,7 +145,7 @@ class Authentication extends Api
 	 */
 	public function enableLoginById($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('enableCustomerFrontendLoginById', ['customerid' => $customerId]);
 	}
@@ -176,7 +193,7 @@ class Authentication extends Api
 	 */
 	public function disableLoginById($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('disableCustomerFrontendLoginById', ['customerid' => $customerId]);
 	}
