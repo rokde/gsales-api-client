@@ -4,6 +4,7 @@ use Rokde\Gsales\Api\Types\Article\Base;
 use Rokde\Gsales\Api\Types\ArticleType;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Article
@@ -86,7 +87,7 @@ class Article extends Api
 	 */
 	public function delete($article)
 	{
-		$articleId = ($article instanceof ArticleType) ? $article->getId() : $article;
+		$articleId = Type::getId($article);
 
 		return $this->call('deleteArticle', ['articleid' => $articleId]);
 	}

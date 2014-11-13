@@ -5,6 +5,7 @@ use Rokde\Gsales\Api\Exceptions\SoapApiException;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
 use Rokde\Gsales\Api\Types\Status;
+use Rokde\Gsales\Api\Types\Type;
 use SoapClient;
 
 /**
@@ -127,7 +128,7 @@ class Api
 	 */
 	protected function getEntity($method, $paramName, $identifier)
 	{
-		$id = ($identifier instanceof IdentifierInterface) ? $identifier->getId() : $identifier;
+		$id = Type::getId($identifier);
 
 		return $this->call($method, [$paramName => $id]);
 	}
@@ -176,7 +177,7 @@ class Api
 	 */
 	protected function modifyState($method, $paramName, $identifier)
 	{
-		$id = ($identifier instanceof IdentifierInterface) ? $identifier->getId() : $identifier;
+		$id = Type::getId($identifier);
 
 		return $this->call($method, [$paramName => $id]);
 	}

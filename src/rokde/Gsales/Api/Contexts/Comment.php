@@ -3,6 +3,7 @@
 use Rokde\Gsales\Api\Contracts\Sub;
 use Rokde\Gsales\Api\Types\Comment\Base;
 use Rokde\Gsales\Api\Types\CommentType;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Comment
@@ -57,7 +58,7 @@ class Comment extends Api
 	 */
 	public function delete($comment)
 	{
-		$commentId = ($comment instanceof CommentType) ? $comment->getId() : $comment;
+		$commentId = Type::getId($comment);
 
 		return $this->call('deleteComment', ['commentid' => $commentId]);
 	}

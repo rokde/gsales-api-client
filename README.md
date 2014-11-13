@@ -4,7 +4,7 @@
 
 ## A generic api client for the billing system gSales
 
-We support API version 2.2 (published on 24th of September 2013).
+We support API version 2.3 (published on 20th of August 2014).
 
 ----
 
@@ -17,7 +17,7 @@ We support API version 2.2 (published on 24th of September 2013).
 Add to your composer.json following lines
 
 	"require": {
-		"rokde/gsales-client-api": "~1.0"
+		"rokde/gsales-client-api": "1.*"
 	}
 
 ### Using in Vanilla PHP

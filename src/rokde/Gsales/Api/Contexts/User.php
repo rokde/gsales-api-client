@@ -3,6 +3,7 @@
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\RoleType;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 use Rokde\Gsales\Api\Types\User\Base;
 use Rokde\Gsales\Api\Types\UserType;
 
@@ -87,7 +88,7 @@ class User extends Api
 	 */
 	public function delete($user)
 	{
-		$userId = ($user instanceof UserType) ? $user->getId() : $user;
+		$userId = Type::getId($user);
 
 		return $this->call('deleteUser', ['userid' => $userId]);
 	}
@@ -135,7 +136,7 @@ class User extends Api
 	 */
 	public function roles($user)
 	{
-		$userId = ($user instanceof UserType) ? $user->getId() : $user;
+		$userId = Type::getId($user);
 
 		return $this->call('getRolesOfUser', ['userid' => $userId]);
 	}
@@ -150,8 +151,8 @@ class User extends Api
 	 */
 	public function addRole($user, $role)
 	{
-		$userId = ($user instanceof UserType) ? $user->getId() : $user;
-		$roleId = ($role instanceof RoleType) ? $role->getId() : $role;
+		$userId = Type::getId($user);
+		$roleId = Type::getId($role);
 
 		return $this->call('addRoleToUser', ['userid' => $userId, 'roleid' => $roleId]);
 	}
@@ -166,8 +167,8 @@ class User extends Api
 	 */
 	public function removeRole($user, $role)
 	{
-		$userId = ($user instanceof UserType) ? $user->getId() : $user;
-		$roleId = ($role instanceof RoleType) ? $role->getId() : $role;
+		$userId = Type::getId($user);
+		$roleId = Type::getId($role);
 
 		return $this->call('removeRoleFromUser', ['userid' => $userId, 'roleid' => $roleId]);
 	}

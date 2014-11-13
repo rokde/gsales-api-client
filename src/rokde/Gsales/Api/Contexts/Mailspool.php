@@ -3,6 +3,7 @@
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\MailspoolType;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Mailspool
@@ -65,7 +66,7 @@ class Mailspool extends Api {
 	 */
 	public function duplicate($mailspool)
 	{
-		$mailSpoolId = ($mailspool instanceof MailspoolType) ? $mailspool->getId() : $mailspool;
+		$mailSpoolId = Type::getId($mailspool);
 
 		return $this->call('duplicateMailspoolEntry', ['mailspoolid' => $mailSpoolId]);
 	}
@@ -124,7 +125,7 @@ class Mailspool extends Api {
 	 */
 	public function delete($mailspool)
 	{
-		$mailSpoolId = ($mailspool instanceof MailspoolType) ? $mailspool->getId() : $mailspool;
+		$mailSpoolId = Type::getId($mailspool);
 
 		return $this->call('updateMailspoolEntry', ['mailspoolid' => $mailSpoolId]);
 	}
@@ -137,7 +138,7 @@ class Mailspool extends Api {
 	 */
 	public function readByRecipient($mailspool)
 	{
-		$mailSpoolId = ($mailspool instanceof MailspoolType) ? $mailspool->getId() : $mailspool;
+		$mailSpoolId = Type::getId($mailspool);
 
 		return $this->call('setMailspoolReadForEntry', ['mailspoolid' => $mailSpoolId]);
 	}

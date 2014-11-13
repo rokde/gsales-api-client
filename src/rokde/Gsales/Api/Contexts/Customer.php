@@ -3,6 +3,7 @@
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Customer
@@ -113,7 +114,7 @@ class Customer extends Api
 	 */
 	public function delete($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('deleteCustomer', ['customerid' => $customerId]);
 	}

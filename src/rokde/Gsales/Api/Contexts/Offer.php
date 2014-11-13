@@ -8,6 +8,7 @@ use Rokde\Gsales\Api\Types\Offer\BasePosition;
 use Rokde\Gsales\Api\Types\Offer\Position;
 use Rokde\Gsales\Api\Types\OfferType;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Offer
@@ -113,7 +114,7 @@ class Offer extends Api
 	 */
 	public function createPosition($offer, BasePosition $position)
 	{
-		$offerId = ($offer instanceof OfferType) ? $offer->getId() : $offer;
+		$offerId = Type::getId($offer);
 
 		return $this->call('createOfferPosition', ['offerid' => $offerId, 'data' => $position]);
 	}
@@ -128,7 +129,7 @@ class Offer extends Api
 	 */
 	public function updatePosition($offer, Position $position)
 	{
-		$offerId = ($offer instanceof OfferType) ? $offer->getId() : $offer;
+		$offerId = Type::getId($offer);
 		$positionId = $position->getId();
 
 		return $this->call('updateOfferPosition', ['offerid' => $offerId, 'positionid' => $positionId, 'data' => $position]);
@@ -144,8 +145,8 @@ class Offer extends Api
 	 */
 	public function deletePosition($offer, $position)
 	{
-		$offerId = ($offer instanceof OfferType) ? $offer->getId() : $offer;
-		$positionId = ($position instanceof Position) ? $position->getId() : $position;
+		$offerId = Type::getId($offer);
+		$positionId = Type::getId($position);
 
 		return $this->call('deleteOfferPosition', ['offerid' => $offerId, 'positionid' => $positionId]);
 	}
@@ -159,7 +160,7 @@ class Offer extends Api
 	 */
 	public function delete($offer)
 	{
-		$offerId = ($offer instanceof OfferType) ? $offer->getId() : $offer;
+		$offerId = Type::getId($offer);
 
 		return $this->call('deleteOffer', ['offerid' => $offerId]);
 	}
@@ -173,7 +174,7 @@ class Offer extends Api
 	 */
 	public function createForCustomer($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('createOfferForCustomer', ['customerid' => $customerId]);
 	}
@@ -214,7 +215,7 @@ class Offer extends Api
 	 */
 	public function addToMailspool($offer)
 	{
-		$offerId = ($offer instanceof OfferType) ? $offer->getId() : $offer;
+		$offerId = Type::getId($offer);
 
 		return $this->call('updateOffer', ['offerid' => $offerId]);
 	}
@@ -228,7 +229,7 @@ class Offer extends Api
 	 */
 	public function pdf($offer)
 	{
-		$offerId = ($offer instanceof OfferType) ? $offer->getId() : $offer;
+		$offerId = Type::getId($offer);
 
 		return $this->call('getOfferPDF', ['offerid' => $offerId]);
 	}

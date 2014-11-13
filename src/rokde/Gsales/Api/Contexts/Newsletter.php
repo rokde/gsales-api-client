@@ -7,6 +7,7 @@ use Rokde\Gsales\Api\Types\Newsletter\BaseRecipient;
 use Rokde\Gsales\Api\Types\Newsletter\Recipient;
 use Rokde\Gsales\Api\Types\NewsletterType;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Newsletter
@@ -63,7 +64,7 @@ class Newsletter extends Api
 	 */
 	public function recipients($newsletter)
 	{
-		$newsletterId = ($newsletter instanceof NewsletterType) ? $newsletter->getId() : $newsletter;
+		$newsletterId = Type::getId($newsletter);
 
 		return $this->call('getNewsletterRecipients', ['newsletterid' => $newsletterId]);
 	}
@@ -103,7 +104,7 @@ class Newsletter extends Api
 	 */
 	public function delete($newsletter)
 	{
-		$newsletterId = ($newsletter instanceof NewsletterType) ? $newsletter->getId() : $newsletter;
+		$newsletterId = Type::getId($newsletter);
 
 		return $this->call('deleteNewsletter', ['newsletterid' => $newsletterId]);
 	}
@@ -118,7 +119,7 @@ class Newsletter extends Api
 	 */
 	public function addRecipient($newsletter, BaseRecipient $recipient)
 	{
-		$newsletterId = ($newsletter instanceof NewsletterType) ? $newsletter->getId() : $newsletter;
+		$newsletterId = Type::getId($newsletter);
 
 		return $this->call('addNewsletterRecipient', ['newsletterid' => $newsletterId, 'data' => $recipient]);
 	}
@@ -133,8 +134,8 @@ class Newsletter extends Api
 	 */
 	public function addCustomerAsRecipient($newsletter, $customer)
 	{
-		$newsletterId = ($newsletter instanceof NewsletterType) ? $newsletter->getId() : $newsletter;
-		$customerId = ($customer instanceof NewsletterType) ? $customer->getId() : $customer;
+		$newsletterId = Type::getId($newsletter);
+		$customerId = Type::getId($customer);
 
 		return $this->call('addNewsletterRecipientByCustomerId', ['newsletterid' => $newsletterId, 'customerid' => $customerId]);
 	}
@@ -149,8 +150,8 @@ class Newsletter extends Api
 	 */
 	public function removeRecipient($newsletter, $recipient)
 	{
-		$newsletterId = ($newsletter instanceof NewsletterType) ? $newsletter->getId() : $newsletter;
-		$recipientId = ($recipient instanceof NewsletterType) ? $recipient->getId() : $recipient;
+		$newsletterId = Type::getId($newsletter);
+		$recipientId = Type::getId($recipient);
 
 		return $this->call('removeNewsletterRecipient', ['newsletterid' => $newsletterId, 'recipientid' => $recipientId]);
 	}
@@ -164,7 +165,7 @@ class Newsletter extends Api
 	 */
 	public function spool($newsletter)
 	{
-		$newsletterId = ($newsletter instanceof NewsletterType) ? $newsletter->getId() : $newsletter;
+		$newsletterId = Type::getId($newsletter);
 
 		return $this->call('spoolNewsletter', ['newsletterid' => $newsletterId]);
 	}

@@ -8,6 +8,7 @@ use Rokde\Gsales\Api\Types\Refund\Position;
 use Rokde\Gsales\Api\Types\RefundType;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Refund
@@ -101,7 +102,7 @@ class Refund extends Api
 	 */
 	public function createPosition($refund, BasePosition $position)
 	{
-		$refundId = ($refund instanceof RefundType) ? $refund->getId() : $refund;
+		$refundId = Type::getId($refund);
 
 		return $this->call('createRefundPosition', ['refundid' => $refundId, 'data' => $position]);
 	}
@@ -116,7 +117,7 @@ class Refund extends Api
 	 */
 	public function updatePosition($refund, Position $position)
 	{
-		$refundId = ($refund instanceof RefundType) ? $refund->getId() : $refund;
+		$refundId = Type::getId($refund);
 		$positionId = $position->getId();
 
 		return $this->call('updateRefundPosition', ['refundid' => $refundId, 'positionid' => $positionId, 'data' => $position]);
@@ -132,7 +133,7 @@ class Refund extends Api
 	 */
 	public function deletePosition($refund, Position $position)
 	{
-		$refundId = ($refund instanceof RefundType) ? $refund->getId() : $refund;
+		$refundId = Type::getId($refund);
 		$positionId = $position->getId();
 
 		return $this->call('deleteRefundPosition', ['refundid' => $refundId, 'positionid' => $positionId]);
@@ -147,7 +148,7 @@ class Refund extends Api
 	 */
 	public function delete($refund)
 	{
-		$refundId = ($refund instanceof RefundType) ? $refund->getId() : $refund;
+		$refundId = Type::getId($refund);
 
 		return $this->call('deleteRefund', ['refundid' => $refundId]);
 	}
@@ -161,7 +162,7 @@ class Refund extends Api
 	 */
 	public function createForCustomer($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('createRefundForCustomer', ['customerid' => $customerId]);
 	}
@@ -201,7 +202,7 @@ class Refund extends Api
 	 */
 	public function addToMailspool($refund)
 	{
-		$refundId = ($refund instanceof RefundType) ? $refund->getId() : $refund;
+		$refundId = Type::getId($refund);
 
 		return $this->call('updateOffer', ['refundid' => $refundId]);
 	}
@@ -215,7 +216,7 @@ class Refund extends Api
 	 */
 	public function pdf($refund)
 	{
-		$refundId = ($refund instanceof RefundType) ? $refund->getId() : $refund;
+		$refundId = Type::getId($refund);
 
 		return $this->call('getOfferPDF', ['refundid' => $refundId]);
 	}

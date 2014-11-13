@@ -6,6 +6,7 @@ use Rokde\Gsales\Api\Types\InvoiceType;
 use Rokde\Gsales\Api\Types\Queue\Base;
 use Rokde\Gsales\Api\Types\QueueType;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Queue
@@ -88,7 +89,7 @@ class Queue extends Api
 	 */
 	public function delete($queueEntry)
 	{
-		$queueId = ($queueEntry instanceof QueueType) ? $queueEntry->getId() : $queueEntry;
+		$queueId = Type::getId($queueEntry);
 
 		return $this->call('deleteQueueEntry', ['queueid' => $queueId]);
 	}
@@ -138,7 +139,7 @@ class Queue extends Api
 	 */
 	public function createInvoice($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('createInvoiceFromQueueForCustomer', ['customerid' => $customerId]);
 	}

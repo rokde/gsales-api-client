@@ -8,6 +8,7 @@ use Rokde\Gsales\Api\Types\Invoice\Base;
 use Rokde\Gsales\Api\Types\Invoice\BasePosition;
 use Rokde\Gsales\Api\Types\Invoice\Position;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Invoice
@@ -101,7 +102,7 @@ class Invoice extends Api
 	 */
 	public function createPosition($invoice, BasePosition $position)
 	{
-		$invoiceId = ($invoice instanceof InvoiceType) ? $invoice->getId() : $invoice;
+		$invoiceId = Type::getId($invoice);
 
 		return $this->call('createInvoicePosition', ['invoiceid' => $invoiceId, 'data' => $position]);
 	}
@@ -116,7 +117,7 @@ class Invoice extends Api
 	 */
 	public function updatePosition($invoice, Position $position)
 	{
-		$invoiceId = ($invoice instanceof InvoiceType) ? $invoice->getId() : $invoice;
+		$invoiceId = Type::getId($invoice);
 		$positionId = $position->getId();
 
 		return $this->call('updateInvoicePosition', ['invoiceid' => $invoiceId, 'positionid' => $positionId, 'data' => $position]);
@@ -132,8 +133,8 @@ class Invoice extends Api
 	 */
 	public function deletePosition($invoice, $position)
 	{
-		$invoiceId = ($invoice instanceof InvoiceType) ? $invoice->getId() : $invoice;
-		$positionId = ($invoice instanceof Position) ? $position->getId() : $position;
+		$invoiceId = Type::getId($invoice);
+		$positionId = Type::getId($position);
 
 		return $this->call('deleteInvoicePosition', ['invoiceid' => $invoiceId, 'positionid' => $positionId]);
 	}
@@ -147,7 +148,7 @@ class Invoice extends Api
 	 */
 	public function delete($invoice)
 	{
-		$invoiceId = ($invoice instanceof InvoiceType) ? $invoice->getId() : $invoice;
+		$invoiceId = Type::getId($invoice);
 
 		return $this->call('deleteInvoice', ['invoiceid' => $invoiceId]);
 	}
@@ -161,7 +162,7 @@ class Invoice extends Api
 	 */
 	public function createForCustomer($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('createInvoiceForCustomer', ['customerid' => $customerId]);
 	}
@@ -201,7 +202,7 @@ class Invoice extends Api
 	 */
 	public function addToMailspool($invoice)
 	{
-		$invoiceId = ($invoice instanceof InvoiceType) ? $invoice->getId() : $invoice;
+		$invoiceId = Type::getId($invoice);
 
 		return $this->call('addInvoiceToMailspool', ['invoiceid' => $invoiceId]);
 	}
@@ -215,7 +216,7 @@ class Invoice extends Api
 	 */
 	public function pdf($invoice)
 	{
-		$invoiceId = ($invoice instanceof InvoiceType) ? $invoice->getId() : $invoice;
+		$invoiceId = Type::getId($invoice);
 
 		return $this->call('getInvoicePDF', ['invoiceid' => $invoiceId]);
 	}
