@@ -1,6 +1,7 @@
 <?php namespace Rokde\Gsales\Api\Supports\Laravel;
 
 use Config;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Rokde\Gsales\Api\Client;
 
@@ -40,6 +41,20 @@ class LaravelGsalesApiClientServiceProvider extends ServiceProvider
 			$apikey = Config::get('gsales-api-client::gsales.apikey');
 
 			return new Client($wsdl, $apikey);
+		});
+
+		$this->registerFacade();
+	}
+
+	/**
+	 * Register the Notify:: facade
+	 */
+	private function registerFacade()
+	{
+		$this->app->booting(function()
+		{
+			$loader = AliasLoader::getInstance();
+			$loader->alias('GsalesApiClient', 'Rokde\Gsales\Api\Supports\Laravel\GsalesApiClientFacade');
 		});
 	}
 
