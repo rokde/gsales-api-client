@@ -71,7 +71,7 @@ class Article extends Api
 	 *
 	 * @return ArticleType
 	 */
-	public function udpate(ArticleType $article)
+	public function update(ArticleType $article)
 	{
 		$articleId = $article->getId();
 

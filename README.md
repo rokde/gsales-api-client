@@ -29,6 +29,289 @@ Add to your composer.json following lines
 
 That's it.
 
+
+### Contexts
+
+You have a lot of contexts to group api commands together.
+
+
+#### Article
+
+All article related commands are grouped in the `Article` context.
+
+	$client->article()->...;
+
+Following methods are available for the article context:
+
+ - `get($articleId)`
+ - `all()`
+ - `count()`
+ - `create($article)`
+ - `update($article)`
+ - `delete($article)`
+
+
+#### Authentication
+
+All authentication related commands are grouped in the `Authentication` context.
+
+	$client->authentication()->...;
+
+Following methods are available for the authentication context:
+
+ - `passwordLost($customer)`
+ - `changePassword($customer, $newPassword)`
+ - `login($customer, $password)`
+ - `enableLogin($customer)`
+ - `enableLoginById($customer)`
+ - `disableLogin($customer)`
+ - `disableLoginById($customer)`
+
+
+#### Comment
+
+All comment related commands are grouped in the `Comment` context.
+
+	$client->comment()->...;
+
+Following methods are available for the comment context:
+
+ - `get($commentId)`
+ - `all($sub, $recordId)`
+ - `create($comment)`
+ - `delete($comment)`
+
+
+#### Configuration
+
+All configuration related commands are grouped in the `Configuration` context.
+
+	$client->configuration()->...;
+
+Following methods are available for the configuration context:
+
+ - `get($key)`
+
+
+#### Contract
+
+All contract related commands are grouped in the `Contract` context.
+
+	$client->contract()->...;
+
+Following methods are available for the contract context:
+
+ - `get($contractId)`
+ - `all()`
+ - `repayable()`
+ - `processRepayable()`
+ - `processRepayableForCustomer($customer)`
+ - `processRepayableContract($contract)`
+ - `count()`
+ - `enable($contract)`
+ - `disable($contract)`
+ - `createPosition($contract, $position)`
+ - `updatePosition($contract, $position)`
+ - `deletePosition($contract, $position)`
+ - `delete($contract)`
+ - `createForCustomer($customer, $contract)`
+ - `update($contract, $data)`
+ - `updateEndDate($contract, $month, $year)`
+ - `removeEndDate($contract)`
+
+
+#### Customer
+
+All customer related commands are grouped in the `Customer` context.
+
+	$client->customer()->...;
+
+Following methods are available for the customer context:
+
+ - `get($customerId)`
+ - `all()`
+ - `count()`
+ - `repayable()`
+ - `create($customer)`
+ - `update($customer)`
+ - `updateProposal($customer)`
+ - `delete($customer)`
+
+
+#### Document
+
+All document related commands are grouped in the `Document` context.
+
+	$client->document()->...;
+
+Following methods are available for the document context:
+
+ - `get($documentId)`
+ - `all()`
+ - `file($documentId)`
+
+
+#### Invoice
+
+All invoice related commands are grouped in the `Invoice` context.
+
+	$client->invoice()->...;
+
+Following methods are available for the invoice context:
+
+ - `get($invoiceId)`
+ - `all()`
+ - `count()`
+ - `paid($invoice)`
+ - `open($invoice)`
+ - `canceled($invoice)`
+ - `createPosition($invoice, $position)`
+ - `updatePosition($invoice, $position)`
+ - `deletePosition($invoice, $position)`
+ - `delete($invoice)`
+ - `createForCustomer($customer)`
+ - `create($invoice)`
+ - `update($invoice)`
+ - `addToMailspool($invoice)`
+ - `pdf($invoice)`
+
+
+#### Mailspool
+
+All mailspool related commands are grouped in the `Mailspool` context.
+
+	$client->mailspool()->...;
+
+Following methods are available for the mailspool context:
+
+ - `send()`
+ - `get($mailSpoolId)`
+ - `all()`
+ - `count()`
+ - `duplicate($mailspool)`
+ - `approve($mailspool)`
+ - `removeApproval($mailspool)`
+ - `create($mailspool)`
+ - `update($mailspool)`
+ - `delete($mailspool)`
+ - `readByRecipient($mailspool)`
+
+
+#### Newsletter
+
+All newsletter related commands are grouped in the `Newsletter` context.
+
+	$client->newsletter()->...;
+
+Following methods are available for the newsletter context:
+
+ - `get($newsletterId)`
+ - `all()`
+ - `count()`
+ - `recipients($newsletter)`
+ - `create($newsletter)`
+ - `update($newsletter)`
+ - `delete($newsletter)`
+ - `addRecipient($newsletter, $recipient)`
+ - `addCustomerAsRecipient($newsletter, $customer)`
+ - `removeRecipient($newsletter, $recipient)`
+ - `spool($newsletter)`
+
+
+#### Offer
+
+All offer related commands are grouped in the `Offer` context.
+
+	$client->offer()->...;
+
+Following methods are available for the offer context:
+
+ - `get($offerId)`
+ - `all()`
+ - `count()`
+ - `accept($offer)`
+ - `declined($offer)`
+ - `open($offer)`
+ - `billed($offer)`
+ - `createPosition($offer, $position)`
+ - `updatePosition($offer, $position)`
+ - `deletePosition($offer, $position)`
+ - `delete($offer)`
+ - `createForCustomer($customer)`
+ - `create($offer)`
+ - `update($offer)`
+ - `addToMailspool($offer)`
+ - `pdf($offer)`
+
+
+#### Queue
+
+All queue related commands are grouped in the `Queue` context.
+
+	$client->queue()->...;
+
+Following methods are available for the queue context:
+
+ - `get($queueId)`
+ - `all()`
+ - `count()`
+ - `create($queueEntry)`
+ - `update($queueEntry)`
+ - `delete($queueEntry)`
+ - `auto($queueEntry)`
+ - `manual($queueEntry)`
+ - `noApproval($queueEntry)`
+ - `createInvoice($customer)`
+ - `createInvoices()`
+
+
+#### Refund
+
+All refund related commands are grouped in the `Refund` context.
+
+	$client->refund()->...;
+
+Following methods are available for the refund context:
+
+ - `get($refundId)`
+ - `all()`
+ - `count()`
+ - `paid($refund)`
+ - `canceled($refund)`
+ - `open($refund)`
+ - `createPosition($refund, $position)`
+ - `updatePosition($refund, $position)`
+ - `deletePosition($refund, $position)`
+ - `delete($refund)`
+ - `createForCustomer($customer)`
+ - `create($refund)`
+ - `update($refund)`
+ - `addToMailspool($refund)`
+ - `pdf($refund)`
+
+
+#### User
+
+All user related commands are grouped in the `User` context.
+
+	$client->user()->...;
+
+Following methods are available for the user context:
+
+ - `get($userId)`
+ - `all()`
+ - `count()`
+ - `create($user)`
+ - `update($user)`
+ - `delete($user)`
+ - `lock($user)`
+ - `unlock($user)`
+ - `availableRoles()`
+ - `roles($user)`
+ - `addRole($user, $role)`
+ - `removeRole($user, $role)`
+
+
 ### Using in Frameworks
 
 #### Using in Laravel 4.x

@@ -72,7 +72,7 @@ class User extends Api
 	 *
 	 * @return UserType
 	 */
-	public function udpate(UserType $user)
+	public function update(UserType $user)
 	{
 		$userId = $user->getId();
 

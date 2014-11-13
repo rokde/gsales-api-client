@@ -166,16 +166,6 @@ class Client extends Api
 	}
 
 	/**
-	 * returns a privileges context
-	 *
-	 * @return \Rokde\Gsales\Api\Contexts\Privileges
-	 */
-	public function privileges()
-	{
-		return $this->getContextInstance('Privileges');
-	}
-
-	/**
 	 * returns a configuration context
 	 *
 	 * @return \Rokde\Gsales\Api\Contexts\Configuration

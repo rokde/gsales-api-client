@@ -88,7 +88,7 @@ class Newsletter extends Api
 	 *
 	 * @return NewsletterType
 	 */
-	public function udpate(NewsletterType $newsletter)
+	public function update(NewsletterType $newsletter)
 	{
 		$newsletterId = $newsletter->getId();
 
