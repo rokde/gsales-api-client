@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:20
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\Filter;
@@ -16,12 +7,18 @@ use Rokde\Gsales\Api\Types\Queue\Base;
 use Rokde\Gsales\Api\Types\QueueType;
 use Rokde\Gsales\Api\Types\Sort;
 
-class Queue extends Api {
-
+/**
+ * Class Queue
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class Queue extends Api
+{
 	/**
 	 * returns a queue entry by id
 	 *
 	 * @param int $queueId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\QueueType
 	 */
 	public function get($queueId)
@@ -36,6 +33,7 @@ class Queue extends Api {
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return \Rokde\Gsales\Api\Types\QueueType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -47,6 +45,7 @@ class Queue extends Api {
 	 * return the number of queue entries getting by filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -58,6 +57,7 @@ class Queue extends Api {
 	 * create a new queue entry
 	 *
 	 * @param Base $queueEntry
+	 *
 	 * @return QueueType
 	 */
 	public function create(Base $queueEntry)
@@ -69,6 +69,7 @@ class Queue extends Api {
 	 * updates a queue entry
 	 *
 	 * @param \Rokde\Gsales\Api\Types\QueueType $queueEntry
+	 *
 	 * @return QueueType
 	 */
 	public function update(QueueType $queueEntry)
@@ -82,6 +83,7 @@ class Queue extends Api {
 	 * updates a queue entry
 	 *
 	 * @param int|\Rokde\Gsales\Api\Types\QueueType $queueEntry
+	 *
 	 * @return bool
 	 */
 	public function delete($queueEntry)
@@ -95,6 +97,7 @@ class Queue extends Api {
 	 * approve queue entry for automatic processing
 	 *
 	 * @param int|QueueType $queueEntry
+	 *
 	 * @return QueueType
 	 */
 	public function auto($queueEntry)
@@ -106,6 +109,7 @@ class Queue extends Api {
 	 * approve queue entry for automatic processing
 	 *
 	 * @param int|QueueType $queueEntry
+	 *
 	 * @return QueueType
 	 */
 	public function manual($queueEntry)
@@ -117,6 +121,7 @@ class Queue extends Api {
 	 * approve queue entry for automatic processing
 	 *
 	 * @param int|QueueType $queueEntry
+	 *
 	 * @return QueueType
 	 */
 	public function noApproval($queueEntry)
@@ -128,6 +133,7 @@ class Queue extends Api {
 	 * creates an invoice from all queue entries for a given customer
 	 *
 	 * @param int|CustomerType $customer
+	 *
 	 * @return InvoiceType
 	 */
 	public function createInvoice($customer)
@@ -146,5 +152,4 @@ class Queue extends Api {
 	{
 		return $this->call('createInvoicesFromQueueForAll');
 	}
-
 }

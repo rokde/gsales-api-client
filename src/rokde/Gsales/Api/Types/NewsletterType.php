@@ -1,20 +1,16 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 10:59
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Newsletter\Base;
 
-class NewsletterType extends Base implements IdentifierInterface {
-
+/**
+ * Class NewsletterType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class NewsletterType extends Base implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
@@ -54,6 +50,7 @@ class NewsletterType extends Base implements IdentifierInterface {
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -93,4 +90,4 @@ class NewsletterType extends Base implements IdentifierInterface {
 	{
 		return $this->info_recipients;
 	}
-} 
+}

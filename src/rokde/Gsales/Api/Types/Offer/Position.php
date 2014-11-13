@@ -1,17 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 10:59
- */
-
-namespace Rokde\Gsales\Api\Types\Offer;
-
+<?php namespace Rokde\Gsales\Api\Types\Offer;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
-class Position extends BasePosition implements IdentifierInterface {
+/**
+ * Class Position
+ *
+ * @package Rokde\Gsales\Api\Types\Offer
+ */
+class Position extends BasePosition implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */

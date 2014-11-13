@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 14:13
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Exceptions\SoapApiException;
@@ -16,6 +7,11 @@ use Rokde\Gsales\Api\Types\Sort;
 use Rokde\Gsales\Api\Types\Status;
 use SoapClient;
 
+/**
+ * Class Api
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
 class Api
 {
 	/**
@@ -126,6 +122,7 @@ class Api
 	 * @param string $method
 	 * @param string $paramName
 	 * @param int|IdentifierInterface $identifier
+	 *
 	 * @return \Rokde\Gsales\Api\Types\Type
 	 */
 	protected function getEntity($method, $paramName, $identifier)
@@ -143,6 +140,7 @@ class Api
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return \Rokde\Gsales\Api\Types\Type[]|\stdClass[]
 	 */
 	protected function getCollection($method, $filter, $sort, $limit, $offset)
@@ -157,6 +155,7 @@ class Api
 	 *
 	 * @param string $method
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	protected function getCollectionCount($method, $filter)
@@ -172,6 +171,7 @@ class Api
 	 * @param string $method
 	 * @param string $paramName
 	 * @param int|\Rokde\Gsales\Api\Contracts\IdentifierInterface $identifier
+	 *
 	 * @return \Rokde\Gsales\Api\Types\Type
 	 */
 	protected function modifyState($method, $paramName, $identifier)
@@ -186,6 +186,7 @@ class Api
 	 *
 	 * @param string $method
 	 * @param array $arguments
+	 *
 	 * @throws SoapApiException
 	 * @return \stdClass|\Rokde\Gsales\Api\Types\Type|bool|int
 	 */
@@ -198,10 +199,9 @@ class Api
 		if (isset($response['status'])) {
 			/** @var Status $status */
 			$status = $response['status'];
-			if (!$status->isSuccessful()) {
+			if ( ! $status->isSuccessful()) {
 				$message = $status->getMessage();
-				if (empty($message))
-				{
+				if (empty($message)) {
 					$message = Status::getStatusMessage($status->getCode());
 				}
 
@@ -220,6 +220,7 @@ class Api
 	 * @param int $limit
 	 * @param int $offset
 	 * @param array $params
+	 *
 	 * @return array
 	 */
 	private function prepareFilterParameter($filter, $sort, $limit, $offset, array $params = array())
@@ -247,6 +248,7 @@ class Api
 	 *
 	 * @param Filter[] $filter
 	 * @param array $params
+	 *
 	 * @return array
 	 */
 	private function prepareFilterOnlyParameter($filter, array $params = array())

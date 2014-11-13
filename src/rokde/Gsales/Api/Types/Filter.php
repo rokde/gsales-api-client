@@ -1,40 +1,35 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 01.04.14
- * Time: 17:56
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use InvalidArgumentException;
 
+/**
+ * Class Filter
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
 class Filter extends Type {
-
 	/**
-	 *
+	 * like operator
 	 */
 	const LIKE = 'like';
 	/**
-	 *
+	 * not like operator
 	 */
 	const NOT_LIKE = 'notlike';
 	/**
-	 *
+	 * greater than operator
 	 */
 	const GREATER_THAN = 'bigger';
 	/**
-	 *
+	 * less than operator
 	 */
 	const LESS_THAN = 'smaller';
 	/**
-	 *
+	 * is operator
 	 */
 	const IS = 'is';
 	/**
-	 *
+	 * is not operator
 	 */
 	const IS_NOT = 'isnot';
 
@@ -42,10 +37,12 @@ class Filter extends Type {
 	 * @var
 	 */
 	private $field;
+
 	/**
 	 * @var
 	 */
 	private $operator;
+
 	/**
 	 * @var
 	 */
@@ -126,4 +123,4 @@ class Filter extends Type {
 	{
 		return $this->field;
 	}
-} 
+}

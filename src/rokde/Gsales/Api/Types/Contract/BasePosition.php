@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 14:25
- */
-
-namespace Rokde\Gsales\Api\Types\Contract;
-
+<?php namespace Rokde\Gsales\Api\Types\Contract;
 
 use Rokde\Gsales\Api\Types\Base\Position;
 
-class BasePosition extends Position {
-
+/**
+ * Class BasePosition
+ *
+ * @package Rokde\Gsales\Api\Types\Contract
+ */
+class BasePosition extends Position
+{
 	/**
 	 * @var int
 	 */
@@ -22,6 +18,7 @@ class BasePosition extends Position {
 	 * sets not_per_interval
 	 *
 	 * @param bool $flag
+	 *
 	 * @return $this
 	 */
 	public function setNotPerInterval($flag = true)
@@ -39,4 +36,4 @@ class BasePosition extends Position {
 	{
 		return ($this->not_per_interval == 1);
 	}
-} 
+}

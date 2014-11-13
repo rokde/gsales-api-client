@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 12:29
- */
-
-namespace Rokde\Gsales\Api\Types\Base;
-
+<?php namespace Rokde\Gsales\Api\Types\Base;
 
 use Rokde\Gsales\Api\Types\Type;
 
-class Sum extends Type {
-
+/**
+ * Class Sum
+ *
+ * @package Rokde\Gsales\Api\Types\Base
+ */
+class Sum extends Type
+{
 	/**
 	 * @var float
 	 */

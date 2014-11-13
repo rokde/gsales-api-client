@@ -1,14 +1,10 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Exceptions;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 09:03
+ * Class CustomerFrontendException
+ *
+ * @package Rokde\Gsales\Api\Exceptions
  */
-
-namespace Rokde\Gsales\Api\Exceptions;
-
-
-class CustomerFrontendException extends CustomerException {
-
-} 
+class CustomerFrontendException extends CustomerException
+{
+}

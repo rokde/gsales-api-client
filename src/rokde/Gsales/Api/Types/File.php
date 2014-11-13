@@ -1,16 +1,12 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Types;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:07
+ * Class File
+ *
+ * @package Rokde\Gsales\Api\Types
  */
-
-namespace Rokde\Gsales\Api\Types;
-
-
-class File {
-
+class File
+{
 	/**
 	 * name of the file
 	 *
@@ -71,4 +67,4 @@ class File {
 	{
 		return $this->size;
 	}
-} 
+}

@@ -1,23 +1,21 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:23
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Contracts\Sub;
 use Rokde\Gsales\Api\Types\Comment\Base;
 use Rokde\Gsales\Api\Types\CommentType;
 
-class Comment extends Api {
+/**
+ * Class Comment
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class Comment extends Api
+{
 	/**
 	 * fetches a single comment by id
 	 *
 	 * @param int $commentId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\CommentType
 	 */
 	public function get($commentId)
@@ -30,6 +28,7 @@ class Comment extends Api {
 	 *
 	 * @param string|Sub $sub
 	 * @param int $recordId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\CommentType[]
 	 */
 	public function all(Sub $sub, $recordId)
@@ -41,6 +40,7 @@ class Comment extends Api {
 	 * creates a new comment
 	 *
 	 * @param Base $comment
+	 *
 	 * @return \Rokde\Gsales\Api\Types\CommentType
 	 */
 	public function create(Base $comment)
@@ -52,6 +52,7 @@ class Comment extends Api {
 	 * deletes a comment
 	 *
 	 * @param int|\Rokde\Gsales\Api\Types\CommentType $comment
+	 *
 	 * @return bool
 	 */
 	public function delete($comment)

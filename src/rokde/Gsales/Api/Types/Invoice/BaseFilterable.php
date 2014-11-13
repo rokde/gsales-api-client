@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:35
- */
-
-namespace Rokde\Gsales\Api\Types\Invoice;
-
+<?php namespace Rokde\Gsales\Api\Types\Invoice;
 
 use DateTime;
 use Rokde\Gsales\Api\Types\Base\Filterable;
 
-class BaseFilterable extends Filterable {
-
+/**
+ * Class BaseFilterable
+ *
+ * @package Rokde\Gsales\Api\Types\Invoice
+ */
+class BaseFilterable extends Filterable
+{
 	/**
 	 * @var string date(Y-m-d)
 	 */
@@ -43,6 +39,7 @@ class BaseFilterable extends Filterable {
 	 * sets deliverydate
 	 *
 	 * @param string $deliverydate
+	 *
 	 * @return $this
 	 */
 	public function setDeliveryDate($deliverydate)
@@ -55,6 +52,7 @@ class BaseFilterable extends Filterable {
 	 * returns DeliveryDate
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string
 	 */
 	public function getDeliveryDate($formatted = true)
@@ -69,6 +67,7 @@ class BaseFilterable extends Filterable {
 	 * sets mediafinanz file
 	 *
 	 * @param string $mediafinanz_file
+	 *
 	 * @return $this
 	 */
 	public function setMediafinanzFile($mediafinanz_file)
@@ -91,6 +90,7 @@ class BaseFilterable extends Filterable {
 	 * sets partial payment
 	 *
 	 * @param float $partialpayment
+	 *
 	 * @return $this
 	 */
 	public function setPartialpayment($partialpayment)
@@ -113,6 +113,7 @@ class BaseFilterable extends Filterable {
 	 * sets payable
 	 *
 	 * @param string $payable date(Y-m-d)
+	 *
 	 * @return $this
 	 */
 	public function setPayable($payable)
@@ -125,6 +126,7 @@ class BaseFilterable extends Filterable {
 	 * returns Payable
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string
 	 */
 	public function getPayable($formatted = true)
@@ -139,6 +141,7 @@ class BaseFilterable extends Filterable {
 	 * sets storno text
 	 *
 	 * @param string $storno_txt
+	 *
 	 * @return $this
 	 */
 	public function setStornoText($storno_txt)
@@ -156,7 +159,4 @@ class BaseFilterable extends Filterable {
 	{
 		return $this->storno_txt;
 	}
-
-
-
-} 
+}

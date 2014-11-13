@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 11:45
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
-class DocumentType extends Type implements IdentifierInterface {
-
+/**
+ * Class DocumentType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class DocumentType extends Type implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
@@ -53,6 +49,7 @@ class DocumentType extends Type implements IdentifierInterface {
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)

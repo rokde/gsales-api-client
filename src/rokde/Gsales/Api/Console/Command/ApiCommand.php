@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 13:58
- */
-
-namespace Rokde\Gsales\Api\Console\Command;
-
+<?php namespace Rokde\Gsales\Api\Console\Command;
 
 use Rokde\Gsales\Api\Client;
 use Symfony\Component\Console\Command\Command;
 
-abstract class ApiCommand extends Command {
-
+/**
+ * Class ApiCommand
+ *
+ * @package Rokde\Gsales\Api\Console\Command
+ */
+abstract class ApiCommand extends Command
+{
 	/**
 	 * name of the command
 	 *

@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 14:38
- */
-
-namespace Rokde\Gsales\Api\Types\Contract;
-
+<?php namespace Rokde\Gsales\Api\Types\Contract;
 
 use Rokde\Gsales\Api\Contracts\SeriesArt;
 use Rokde\Gsales\Api\Types\Type;
 
-class UpdateContract extends Type {
-
+/**
+ * Class UpdateContract
+ *
+ * @package Rokde\Gsales\Api\Types\Contract
+ */
+class UpdateContract extends Type
+{
 	/**
 	 * @var int
 	 */
@@ -53,6 +49,7 @@ class UpdateContract extends Type {
 	 * sets interval
 	 *
 	 * @param int $interval
+	 *
 	 * @return $this
 	 */
 	public function setInterval($interval)
@@ -119,6 +116,7 @@ class UpdateContract extends Type {
 	 * sets custom1
 	 *
 	 * @param string $custom1
+	 *
 	 * @return $this
 	 */
 	public function setCustom1($custom1)
@@ -142,6 +140,7 @@ class UpdateContract extends Type {
 	 * sets custom2
 	 *
 	 * @param string $custom2
+	 *
 	 * @return $this
 	 */
 	public function setCustom2($custom2)
@@ -165,6 +164,7 @@ class UpdateContract extends Type {
 	 * sets custom3
 	 *
 	 * @param string $custom3
+	 *
 	 * @return $this
 	 */
 	public function setCustom3($custom3)
@@ -188,6 +188,7 @@ class UpdateContract extends Type {
 	 * sets custom4
 	 *
 	 * @param string $custom4
+	 *
 	 * @return $this
 	 */
 	public function setCustom4($custom4)
@@ -211,6 +212,7 @@ class UpdateContract extends Type {
 	 * sets custom5
 	 *
 	 * @param string $custom5
+	 *
 	 * @return $this
 	 */
 	public function setCustom5($custom5)
@@ -219,4 +221,4 @@ class UpdateContract extends Type {
 
 		return $this;
 	}
-} 
+}

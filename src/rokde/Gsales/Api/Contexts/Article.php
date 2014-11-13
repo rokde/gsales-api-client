@@ -1,25 +1,22 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:22
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\Article\Base;
 use Rokde\Gsales\Api\Types\ArticleType;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
 
-class Article extends Api {
-
+/**
+ * Class Article
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class Article extends Api
+{
 	/**
 	 * fetches a single article by id
 	 *
 	 * @param int $articleId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\ArticleType
 	 */
 	public function get($articleId)
@@ -34,6 +31,7 @@ class Article extends Api {
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return \Rokde\Gsales\Api\Types\ArticleType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -45,6 +43,7 @@ class Article extends Api {
 	 * returns the number of articles returned by filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -56,6 +55,7 @@ class Article extends Api {
 	 * creates an article
 	 *
 	 * @param Base $article
+	 *
 	 * @return ArticleType
 	 */
 	public function create(Base $article)
@@ -67,6 +67,7 @@ class Article extends Api {
 	 * updates an article
 	 *
 	 * @param ArticleType $article
+	 *
 	 * @return ArticleType
 	 */
 	public function udpate(ArticleType $article)
@@ -80,6 +81,7 @@ class Article extends Api {
 	 * deletes an article
 	 *
 	 * @param int|ArticleType $article
+	 *
 	 * @return bool
 	 */
 	public function delete($article)

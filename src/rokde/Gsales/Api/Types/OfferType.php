@@ -1,21 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 09:17
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Offer\Base as OfferBase;
 use Rokde\Gsales\Api\Types\Offer\Position;
 use Rokde\Gsales\Api\Types\Offer\Sum as OfferSum;
 
-class OfferType extends Type implements IdentifierInterface {
-
+/**
+ * Class OfferType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class OfferType extends Type implements IdentifierInterface
+{
 	/**
 	 * @var OfferBase
 	 */
@@ -77,6 +73,7 @@ class OfferType extends Type implements IdentifierInterface {
 	 * sets positions
 	 *
 	 * @param \Rokde\Gsales\Api\Types\Offer\Position[] $pos
+	 *
 	 * @return $this
 	 */
 	public function setPositions($pos)
@@ -99,6 +96,7 @@ class OfferType extends Type implements IdentifierInterface {
 	 * adds a position
 	 *
 	 * @param Position $position
+	 *
 	 * @return $this
 	 */
 	public function addPosition(Position $position)
@@ -107,4 +105,4 @@ class OfferType extends Type implements IdentifierInterface {
 
 		return $this;
 	}
-} 
+}

@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:19
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\File;
@@ -18,11 +9,18 @@ use Rokde\Gsales\Api\Types\RefundType;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
 
-class Refund extends Api {
+/**
+ * Class Refund
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class Refund extends Api
+{
 	/**
 	 * returns a refund by id
 	 *
 	 * @param int $refundId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RefundType
 	 */
 	public function get($refundId)
@@ -37,6 +35,7 @@ class Refund extends Api {
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RefundType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -48,6 +47,7 @@ class Refund extends Api {
 	 * returns number of invoices by filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -59,6 +59,7 @@ class Refund extends Api {
 	 * marks a refund as paid
 	 *
 	 * @param int|\Rokde\Gsales\Api\Types\RefundType $refund
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RefundType
 	 */
 	public function paid($refund)
@@ -70,6 +71,7 @@ class Refund extends Api {
 	 * marks a refund as canceled
 	 *
 	 * @param int|\Rokde\Gsales\Api\Types\RefundType $refund
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RefundType
 	 */
 	public function canceled($refund)
@@ -81,6 +83,7 @@ class Refund extends Api {
 	 * marks a refund as open
 	 *
 	 * @param int|\Rokde\Gsales\Api\Types\RefundType $refund
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RefundType
 	 */
 	public function open($refund)
@@ -93,6 +96,7 @@ class Refund extends Api {
 	 *
 	 * @param RefundType|int $refund
 	 * @param \Rokde\Gsales\Api\Types\Refund\BasePosition $position
+	 *
 	 * @return RefundType
 	 */
 	public function createPosition($refund, BasePosition $position)
@@ -107,6 +111,7 @@ class Refund extends Api {
 	 *
 	 * @param RefundType|int $refund
 	 * @param Position $position
+	 *
 	 * @return RefundType
 	 */
 	public function updatePosition($refund, Position $position)
@@ -122,6 +127,7 @@ class Refund extends Api {
 	 *
 	 * @param RefundType|int $refund
 	 * @param Position $position
+	 *
 	 * @return RefundType
 	 */
 	public function deletePosition($refund, Position $position)
@@ -136,6 +142,7 @@ class Refund extends Api {
 	 * deletes a refund
 	 *
 	 * @param RefundType|int $refund
+	 *
 	 * @return bool
 	 */
 	public function delete($refund)
@@ -149,6 +156,7 @@ class Refund extends Api {
 	 * creates a refund for customer
 	 *
 	 * @param int|\Rokde\Gsales\Api\Types\CustomerType $customer
+	 *
 	 * @return RefundType
 	 */
 	public function createForCustomer($customer)
@@ -162,6 +170,7 @@ class Refund extends Api {
 	 * creates a refund
 	 *
 	 * @param Base $refund
+	 *
 	 * @return RefundType
 	 */
 	public function create(Base $refund)
@@ -173,6 +182,7 @@ class Refund extends Api {
 	 * updates a refund
 	 *
 	 * @param RefundType $refund
+	 *
 	 * @return RefundType
 	 */
 	public function update(RefundType $refund)
@@ -186,6 +196,7 @@ class Refund extends Api {
 	 * adds refund to mailspool
 	 *
 	 * @param RefundType|int $refund
+	 *
 	 * @return bool
 	 */
 	public function addToMailspool($refund)
@@ -199,6 +210,7 @@ class Refund extends Api {
 	 * returns pdf for refund
 	 *
 	 * @param RefundType|int $refund
+	 *
 	 * @return File
 	 */
 	public function pdf($refund)

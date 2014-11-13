@@ -1,21 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 14:03
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Contract\Base;
 use Rokde\Gsales\Api\Types\Contract\Position;
 use Rokde\Gsales\Api\Types\Contract\Sum;
 
-class ContractType extends Type implements IdentifierInterface {
-
+/**
+ * Class ContractType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class ContractType extends Type implements IdentifierInterface
+{
 	/**
 	 * @var Base
 	 */
@@ -77,6 +73,7 @@ class ContractType extends Type implements IdentifierInterface {
 	 * sets positions
 	 *
 	 * @param \Rokde\Gsales\Api\Types\Contract\Position[] $pos
+	 *
 	 * @return $this
 	 */
 	public function setPositions($pos)
@@ -99,6 +96,7 @@ class ContractType extends Type implements IdentifierInterface {
 	 * adds a position
 	 *
 	 * @param Position $position
+	 *
 	 * @return $this
 	 */
 	public function addPosition(Position $position)
@@ -107,4 +105,4 @@ class ContractType extends Type implements IdentifierInterface {
 
 		return $this;
 	}
-} 
+}

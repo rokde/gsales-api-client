@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 11:03
- */
-
-namespace Rokde\Gsales\Api\Types\Offer;
-
+<?php namespace Rokde\Gsales\Api\Types\Offer;
 
 use Rokde\Gsales\Api\Types\Base\Position;
 
-class BasePosition extends Position {
-
+/**
+ * Class BasePosition
+ *
+ * @package Rokde\Gsales\Api\Types\Offer
+ */
+class BasePosition extends Position
+{
 	/**
 	 * @var bool
 	 */
@@ -22,6 +18,7 @@ class BasePosition extends Position {
 	 * sets optional
 	 *
 	 * @param bool $flag
+	 *
 	 * @internal param bool $optional
 	 * @return $this
 	 */
@@ -40,5 +37,4 @@ class BasePosition extends Position {
 	{
 		return $this->optional;
 	}
-
-} 
+}

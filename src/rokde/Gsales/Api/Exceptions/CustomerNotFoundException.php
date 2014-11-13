@@ -1,14 +1,12 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Exceptions;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 08:31
+ * Class CustomerNotFoundException
+ *
+ * Customer not found exception
+ *
+ * @package Rokde\Gsales\Api\Exceptions
  */
-
-namespace Rokde\Gsales\Api\Exceptions;
-
-
-class CustomerNotFoundException extends CustomerException {
-
-} 
+class CustomerNotFoundException extends CustomerException
+{
+}

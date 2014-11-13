@@ -1,18 +1,16 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 01.04.14
- * Time: 15:34
- */
-
-namespace Rokde\Gsales\Api;
-
+<?php namespace Rokde\Gsales\Api;
 
 use Rokde\Gsales\Api\Contexts\Api;
 use SoapClient;
 
-class Client extends Api {
+/**
+ * Class Client
+ *
+ * @package Rokde\Gsales\Api
+ */
+class Client extends Api
+{
+	const CONTEXT_NAMESPACE = "\\Rokde\\Gsales\\Api\\Contexts\\";
 
 	/**
 	 * contexts array
@@ -28,12 +26,9 @@ class Client extends Api {
 	 */
 	public function __construct($wsdl, $apikey, array $options = array())
 	{
-		if (!isset($options['classmap']))
-		{
+		if ( ! isset($options['classmap'])) {
 			$options['classmap'] = static::classmap();
-		}
-		else
-		{
+		} else {
 			$options['classmap'] = array_merge(static::classmap(), $options['classmap']);
 		}
 
@@ -194,13 +189,13 @@ class Client extends Api {
 	 * returns an api context
 	 *
 	 * @param string $context
+	 *
 	 * @return Api
 	 */
 	protected function getContextInstance($context)
 	{
-		if (!isset(static::$contexts[$context]))
-		{
-			$contextClass = "\\Rokde\\Gsales\\Api\\Contexts\\" . $context;
+		if ( ! isset(static::$contexts[$context])) {
+			$contextClass = self::CONTEXT_NAMESPACE . $context;
 
 			static::$contexts[$context] = new $contextClass($this->getClient(), $this->getApiKey());
 		}

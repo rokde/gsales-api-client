@@ -1,16 +1,11 @@
 #!/usr/bin/env php
 <?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 13:41
- */
-require_once '../vendor/autoload.php';
+
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use \Rokde\Gsales\Api\Console\Command as ConsoleCommands;
 
-$config = include('../config.php');
+$config = include(__DIR__ . '/../config.php');
 $wsdl = $config['gsales']['wsdl'];
 $apikey = $config['gsales']['apikey'];
 

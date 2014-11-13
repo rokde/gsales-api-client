@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:21
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\Filter;
@@ -17,12 +8,18 @@ use Rokde\Gsales\Api\Types\Newsletter\Recipient;
 use Rokde\Gsales\Api\Types\NewsletterType;
 use Rokde\Gsales\Api\Types\Sort;
 
-class Newsletter extends Api {
-
+/**
+ * Class Newsletter
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class Newsletter extends Api
+{
 	/**
 	 * fetches a newsletter by id
 	 *
 	 * @param int $newsletterId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\NewsletterType
 	 */
 	public function get($newsletterId)
@@ -37,6 +34,7 @@ class Newsletter extends Api {
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return \Rokde\Gsales\Api\Types\NewsletterType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -48,6 +46,7 @@ class Newsletter extends Api {
 	 * returns the number of newsletters returned by filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -59,6 +58,7 @@ class Newsletter extends Api {
 	 * returns all recipients from newsletter
 	 *
 	 * @param int|NewsletterType $newsletter
+	 *
 	 * @return \Rokde\Gsales\Api\Types\Newsletter\Recipient[]
 	 */
 	public function recipients($newsletter)
@@ -72,6 +72,7 @@ class Newsletter extends Api {
 	 * creates a newsletter
 	 *
 	 * @param Base $newsletter
+	 *
 	 * @return NewsletterType
 	 */
 	public function create(Base $newsletter)
@@ -83,6 +84,7 @@ class Newsletter extends Api {
 	 * updates a newsletter
 	 *
 	 * @param NewsletterType $newsletter
+	 *
 	 * @return NewsletterType
 	 */
 	public function udpate(NewsletterType $newsletter)
@@ -96,6 +98,7 @@ class Newsletter extends Api {
 	 * deletes a newsletter
 	 *
 	 * @param int|NewsletterType $newsletter
+	 *
 	 * @return bool
 	 */
 	public function delete($newsletter)
@@ -110,6 +113,7 @@ class Newsletter extends Api {
 	 *
 	 * @param int|NewsletterType $newsletter
 	 * @param BaseRecipient $recipient
+	 *
 	 * @return int
 	 */
 	public function addRecipient($newsletter, BaseRecipient $recipient)
@@ -124,6 +128,7 @@ class Newsletter extends Api {
 	 *
 	 * @param int|NewsletterType $newsletter
 	 * @param int|CustomerType $customer
+	 *
 	 * @return int
 	 */
 	public function addCustomerAsRecipient($newsletter, $customer)
@@ -139,6 +144,7 @@ class Newsletter extends Api {
 	 *
 	 * @param int|NewsletterType $newsletter
 	 * @param int|Recipient $recipient
+	 *
 	 * @return int
 	 */
 	public function removeRecipient($newsletter, $recipient)
@@ -153,6 +159,7 @@ class Newsletter extends Api {
 	 * spools a newsletter
 	 *
 	 * @param int|NewsletterType $newsletter
+	 *
 	 * @return int
 	 */
 	public function spool($newsletter)

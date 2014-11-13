@@ -1,20 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 14:07
- */
-
-namespace Rokde\Gsales\Api\Types\Contract;
-
+<?php namespace Rokde\Gsales\Api\Types\Contract;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Contracts\SeriesArt;
 use Rokde\Gsales\Api\Types\Type;
 
-class BaseFilterable extends Type implements IdentifierInterface {
+/**
+ * Class BaseFilterable
+ *
+ * @package Rokde\Gsales\Api\Types\Contract
+ */
+class BaseFilterable extends Type implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
@@ -154,6 +151,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets id
 	 *
 	 * @param int $id
+	 *
 	 * @return $this
 	 */
 	public function setId($id)
@@ -176,6 +174,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -190,6 +189,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets user id
 	 *
 	 * @param int $user_id
+	 *
 	 * @return $this
 	 */
 	public function setUserId($user_id)
@@ -213,6 +213,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets InvoiceNumber
 	 *
 	 * @param string $invoiceno
+	 *
 	 * @return $this
 	 */
 	public function setInvoiceNumber($invoiceno)
@@ -235,6 +236,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets pos count
 	 *
 	 * @param int $poscount
+	 *
 	 * @return $this
 	 */
 	public function setPositionCount($poscount)
@@ -257,6 +259,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets amount
 	 *
 	 * @param float $amount
+	 *
 	 * @return $this
 	 */
 	public function setAmount($amount)
@@ -279,6 +282,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets net amount
 	 *
 	 * @param float $netamount
+	 *
 	 * @return $this
 	 */
 	public function setNetAmount($netamount)
@@ -301,6 +305,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets customer id
 	 *
 	 * @param int $customers_id
+	 *
 	 * @return $this
 	 */
 	public function setCustomerId($customers_id)
@@ -323,6 +328,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets print contact person
 	 *
 	 * @param int $print_contactperson
+	 *
 	 * @return $this
 	 */
 	public function setPrintContactPerson($print_contactperson)
@@ -345,6 +351,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets curr_id
 	 *
 	 * @param int $curr_id
+	 *
 	 * @return $this
 	 */
 	public function setCurrencyId($curr_id)
@@ -367,6 +374,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets currency rate
 	 *
 	 * @param float $curr_rate
+	 *
 	 * @return $this
 	 */
 	public function setCurrencyRate($curr_rate)
@@ -389,6 +397,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets currency symbol
 	 *
 	 * @param string $curr_symbol
+	 *
 	 * @return $this
 	 */
 	public function setCurrencySymbol($curr_symbol)
@@ -411,6 +420,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets ClosingText
 	 *
 	 * @param string $i_post_txt
+	 *
 	 * @return $this
 	 */
 	public function setClosingText($i_post_txt)
@@ -433,6 +443,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets IntroductionText
 	 *
 	 * @param string $i_pre_txt
+	 *
 	 * @return $this
 	 */
 	public function setIntroductionText($i_pre_txt)
@@ -455,6 +466,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets template
 	 *
 	 * @param string $template
+	 *
 	 * @return $this
 	 */
 	public function setTemplate($template)
@@ -487,6 +499,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets custom1
 	 *
 	 * @param string $custom1
+	 *
 	 * @return $this
 	 */
 	public function setCustom1($custom1)
@@ -510,6 +523,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets custom2
 	 *
 	 * @param string $custom2
+	 *
 	 * @return $this
 	 */
 	public function setCustom2($custom2)
@@ -533,6 +547,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets custom3
 	 *
 	 * @param string $custom3
+	 *
 	 * @return $this
 	 */
 	public function setCustom3($custom3)
@@ -556,6 +571,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets custom4
 	 *
 	 * @param string $custom4
+	 *
 	 * @return $this
 	 */
 	public function setCustom4($custom4)
@@ -579,6 +595,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets custom5
 	 *
 	 * @param string $custom5
+	 *
 	 * @return $this
 	 */
 	public function setCustom5($custom5)
@@ -592,6 +609,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets active
 	 *
 	 * @param bool $flag
+	 *
 	 * @return $this
 	 */
 	public function setActive($flag = true)
@@ -614,6 +632,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets billed_until
 	 *
 	 * @param string $billed_until
+	 *
 	 * @return $this
 	 */
 	public function setBilledUntil($billed_until)
@@ -626,6 +645,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * returns BilledUntil
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string
 	 */
 	public function getBilledUntil($formatted = true)
@@ -640,6 +660,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets duedate
 	 *
 	 * @param string $duedate
+	 *
 	 * @return $this
 	 */
 	public function setDuedate($duedate)
@@ -652,6 +673,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * returns Duedate
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string
 	 */
 	public function getDuedate($formatted = true)
@@ -665,6 +687,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets interval
 	 *
 	 * @param int $interval
+	 *
 	 * @return $this
 	 */
 	public function setInterval($interval)
@@ -721,6 +744,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets start
 	 *
 	 * @param string $start
+	 *
 	 * @return $this
 	 */
 	public function setStart($start)
@@ -733,6 +757,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * returns Start
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getStart($formatted = true)
@@ -747,6 +772,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * sets stop
 	 *
 	 * @param string $stop
+	 *
 	 * @return $this
 	 */
 	public function setStop($stop)
@@ -759,6 +785,7 @@ class BaseFilterable extends Type implements IdentifierInterface {
 	 * returns Stop
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getStop($formatted = true)

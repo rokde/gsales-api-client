@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:24
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\RoleType;
@@ -15,12 +6,18 @@ use Rokde\Gsales\Api\Types\Sort;
 use Rokde\Gsales\Api\Types\User\Base;
 use Rokde\Gsales\Api\Types\UserType;
 
-class User extends Api {
-
+/**
+ * Class User
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class User extends Api
+{
 	/**
 	 * fetches a single user by id
 	 *
 	 * @param int $userId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\UserType
 	 */
 	public function get($userId)
@@ -35,6 +32,7 @@ class User extends Api {
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return \Rokde\Gsales\Api\Types\UserType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -46,6 +44,7 @@ class User extends Api {
 	 * returns the number of users returned by filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -57,6 +56,7 @@ class User extends Api {
 	 * creates an user
 	 *
 	 * @param Base $user
+	 *
 	 * @return \Rokde\Gsales\Api\Types\UserType
 	 */
 	public function create(Base $user)
@@ -68,6 +68,7 @@ class User extends Api {
 	 * updates an user
 	 *
 	 * @param UserType $user
+	 *
 	 * @return UserType
 	 */
 	public function udpate(UserType $user)
@@ -81,6 +82,7 @@ class User extends Api {
 	 * deletes an user
 	 *
 	 * @param int|UserType $user
+	 *
 	 * @return bool
 	 */
 	public function delete($user)
@@ -94,6 +96,7 @@ class User extends Api {
 	 * locks a user
 	 *
 	 * @param int|UserType $user
+	 *
 	 * @return \Rokde\Gsales\Api\Types\UserType
 	 */
 	public function lock($user)
@@ -105,6 +108,7 @@ class User extends Api {
 	 * unlocks a user
 	 *
 	 * @param int|UserType $user
+	 *
 	 * @return \Rokde\Gsales\Api\Types\UserType
 	 */
 	public function unlock($user)
@@ -126,6 +130,7 @@ class User extends Api {
 	 * returns roles for user
 	 *
 	 * @param int|UserType $user
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RoleType[]
 	 */
 	public function roles($user)
@@ -140,6 +145,7 @@ class User extends Api {
 	 *
 	 * @param int|UserType $user
 	 * @param int|RoleType $role
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RoleType[]
 	 */
 	public function addRole($user, $role)
@@ -155,6 +161,7 @@ class User extends Api {
 	 *
 	 * @param int|UserType $user
 	 * @param int|RoleType $role
+	 *
 	 * @return \Rokde\Gsales\Api\Types\RoleType[]
 	 */
 	public function removeRole($user, $role)

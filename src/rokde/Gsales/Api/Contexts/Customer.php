@@ -1,16 +1,8 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 11:30
- */
+<?php namespace Rokde\Gsales\Api\Contexts;
 
-namespace Rokde\Gsales\Api\Contexts;
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
-
 
 /**
  * Class Customer
@@ -19,12 +11,13 @@ use Rokde\Gsales\Api\Types\Sort;
  *
  * @package Rokde\Gsales\Api\Contexts
  */
-class Customer extends Api {
-
+class Customer extends Api
+{
 	/**
 	 * finds a customer by id
 	 *
 	 * @param int $customerId
+	 *
 	 * @return CustomerType
 	 */
 	public function get($customerId)
@@ -39,6 +32,7 @@ class Customer extends Api {
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return CustomerType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -50,6 +44,7 @@ class Customer extends Api {
 	 * returns number of customers by filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -71,6 +66,7 @@ class Customer extends Api {
 	 * creates a new customer
 	 *
 	 * @param CustomerType $customer
+	 *
 	 * @return CustomerType
 	 */
 	public function create(CustomerType $customer)
@@ -83,6 +79,7 @@ class Customer extends Api {
 	 *
 	 * @param CustomerType $customer
 	 * @param int|null $customerId overriding customer id to be used
+	 *
 	 * @return CustomerType
 	 */
 	public function update(CustomerType $customer, $customerId = null)
@@ -97,6 +94,7 @@ class Customer extends Api {
 	 *
 	 * @param CustomerType $customer
 	 * @param int|null $customerId overriding customer id to be used
+	 *
 	 * @return CustomerType
 	 */
 	public function updateProposal(CustomerType $customer, $customerId = null)
@@ -110,6 +108,7 @@ class Customer extends Api {
 	 * deletes a customer
 	 *
 	 * @param Customer|int $customer
+	 *
 	 * @return bool
 	 */
 	public function delete($customer)
@@ -118,4 +117,4 @@ class Customer extends Api {
 
 		return $this->call('deleteCustomer', ['customerid' => $customerId]);
 	}
-} 
+}

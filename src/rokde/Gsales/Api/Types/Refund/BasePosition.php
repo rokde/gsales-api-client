@@ -1,14 +1,10 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Types\Refund;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 12:21
+ * Class BasePosition
+ *
+ * @package Rokde\Gsales\Api\Types\Refund
  */
-
-namespace Rokde\Gsales\Api\Types\Refund;
-
-
 class BasePosition
 {
 	/**
@@ -50,6 +46,7 @@ class BasePosition
 	 * sets discount
 	 *
 	 * @param float $discount
+	 *
 	 * @return $this
 	 */
 	public function setDiscount($discount)
@@ -72,6 +69,7 @@ class BasePosition
 	 * sets position text
 	 *
 	 * @param string $pos_txt
+	 *
 	 * @return $this
 	 */
 	public function setPositionText($pos_txt)
@@ -94,6 +92,7 @@ class BasePosition
 	 * sets price
 	 *
 	 * @param float $price
+	 *
 	 * @return $this
 	 */
 	public function setPrice($price)
@@ -116,6 +115,7 @@ class BasePosition
 	 * sets quantity
 	 *
 	 * @param float $quantity
+	 *
 	 * @return $this
 	 */
 	public function setQuantity($quantity)
@@ -138,6 +138,7 @@ class BasePosition
 	 * sets tax
 	 *
 	 * @param float $tax
+	 *
 	 * @return $this
 	 */
 	public function setTax($tax)
@@ -160,6 +161,7 @@ class BasePosition
 	 * sets unit
 	 *
 	 * @param string $unit
+	 *
 	 * @return $this
 	 */
 	public function setUnit($unit)
@@ -182,6 +184,7 @@ class BasePosition
 	 * sets useDefaultTax
 	 *
 	 * @param bool $flag
+	 *
 	 * @return $this
 	 */
 	public function useDefaultTax($flag = true)

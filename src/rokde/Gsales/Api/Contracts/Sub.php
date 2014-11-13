@@ -1,16 +1,12 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Contracts;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 12:03
+ * Interface Sub
+ *
+ * @package Rokde\Gsales\Api\Contracts
  */
-
-namespace Rokde\Gsales\Api\Contracts;
-
-
-interface Sub {
-
+interface Sub
+{
 	const CUSTOMER = 'subcustomer';
 	const LETTER = 'subletter';
 	const OFFER = 'suboffer';

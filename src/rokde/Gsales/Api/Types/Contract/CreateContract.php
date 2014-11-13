@@ -1,17 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 14:36
- */
-
-namespace Rokde\Gsales\Api\Types\Contract;
-
+<?php namespace Rokde\Gsales\Api\Types\Contract;
 
 use DateTime;
 
-class CreateContract extends UpdateContract {
+/**
+ * Class CreateContract
+ *
+ * @package Rokde\Gsales\Api\Types\Contract
+ */
+class CreateContract extends UpdateContract
+{
 	/**
 	 * @var string date(Y-m-d)
 	 */
@@ -26,11 +23,13 @@ class CreateContract extends UpdateContract {
 	 * sets start
 	 *
 	 * @param string $start
+	 *
 	 * @return $this
 	 */
 	public function setStart($start)
 	{
 		$this->start = $start;
+
 		return $this;
 	}
 
@@ -38,6 +37,7 @@ class CreateContract extends UpdateContract {
 	 * returns Start
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getStart($formatted = true)
@@ -52,6 +52,7 @@ class CreateContract extends UpdateContract {
 	 * sets endInMonths
 	 *
 	 * @param int $endInMonths
+	 *
 	 * @return $this
 	 */
 	public function setEndInMonths($endInMonths)

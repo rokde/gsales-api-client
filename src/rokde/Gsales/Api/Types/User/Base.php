@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 12:09
- */
-
-namespace Rokde\Gsales\Api\Types\User;
-
+<?php namespace Rokde\Gsales\Api\Types\User;
 
 use Rokde\Gsales\Api\Types\Type;
 
-class Base extends Type {
-
+/**
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\User
+ */
+class Base extends Type
+{
 	/**
 	 * @var string
 	 */
@@ -34,6 +30,7 @@ class Base extends Type {
 	 * sets email
 	 *
 	 * @param string $email
+	 *
 	 * @return $this
 	 */
 	public function setEmail($email)
@@ -56,6 +53,7 @@ class Base extends Type {
 	 * sets fullname
 	 *
 	 * @param string $fullname
+	 *
 	 * @return $this
 	 */
 	public function setFullname($fullname)
@@ -78,6 +76,7 @@ class Base extends Type {
 	 * sets login
 	 *
 	 * @param string $login
+	 *
 	 * @return $this
 	 */
 	public function setLogin($login)
@@ -100,6 +99,7 @@ class Base extends Type {
 	 * sets password
 	 *
 	 * @param string $password
+	 *
 	 * @return $this
 	 */
 	public function setPassword($password)
@@ -117,6 +117,4 @@ class Base extends Type {
 	{
 		return $this->password;
 	}
-
-
 }

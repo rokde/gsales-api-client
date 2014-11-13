@@ -1,20 +1,16 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 15:45
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Queue\Base;
 
-class QueueType extends Base implements IdentifierInterface {
-
+/**
+ * Class QueueType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class QueueType extends Base implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
@@ -44,6 +40,7 @@ class QueueType extends Base implements IdentifierInterface {
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)

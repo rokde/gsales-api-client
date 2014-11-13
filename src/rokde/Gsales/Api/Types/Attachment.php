@@ -1,17 +1,13 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 16:41
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
+/**
+ * Class Attachment
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
 class Attachment extends Type implements IdentifierInterface
 {
 	/**
@@ -43,6 +39,7 @@ class Attachment extends Type implements IdentifierInterface
 	 * sets created
 	 *
 	 * @param string $created
+	 *
 	 * @return $this
 	 */
 	public function setCreated($created)
@@ -55,6 +52,7 @@ class Attachment extends Type implements IdentifierInterface
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -69,6 +67,7 @@ class Attachment extends Type implements IdentifierInterface
 	 * sets filename
 	 *
 	 * @param string $filename
+	 *
 	 * @return $this
 	 */
 	public function setFilename($filename)
@@ -91,6 +90,7 @@ class Attachment extends Type implements IdentifierInterface
 	 * sets filesize
 	 *
 	 * @param int $filesize
+	 *
 	 * @return $this
 	 */
 	public function setFilesize($filesize)
@@ -123,6 +123,7 @@ class Attachment extends Type implements IdentifierInterface
 	 * sets mime
 	 *
 	 * @param string $mime
+	 *
 	 * @return $this
 	 */
 	public function setMime($mime)
@@ -140,4 +141,4 @@ class Attachment extends Type implements IdentifierInterface
 	{
 		return $this->mime;
 	}
-} 
+}

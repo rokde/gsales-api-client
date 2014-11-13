@@ -1,18 +1,15 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Contracts;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 15:49
+ * Interface Approval
+ *
+ * Defines the approval levels
+ *
+ * @package Rokde\Gsales\Api\Contracts
  */
-
-namespace Rokde\Gsales\Api\Contracts;
-
-
-interface Approval {
-
+interface Approval
+{
 	const NOT_APPROVED = 0;
 	const APPROVED_FOR_MANUAL_PROCESSING = 1;
 	const APPROVED_FOR_AUTOMATIC_PROCESSING = 2;
-
-} 
+}

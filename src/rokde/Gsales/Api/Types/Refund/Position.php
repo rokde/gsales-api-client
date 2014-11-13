@@ -1,17 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 12:20
- */
-
-namespace Rokde\Gsales\Api\Types\Refund;
-
+<?php namespace Rokde\Gsales\Api\Types\Refund;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
-class Position extends BasePosition implements IdentifierInterface {
+/**
+ * Class Position
+ *
+ * @package Rokde\Gsales\Api\Types\Refund
+ */
+class Position extends BasePosition implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
@@ -191,4 +188,4 @@ class Position extends BasePosition implements IdentifierInterface {
 	{
 		return $this->vars_pos_txt;
 	}
-} 
+}

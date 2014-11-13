@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 11:49
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Comment\Base;
 
+/**
+ * Class CommentType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
 class CommentType extends Base implements IdentifierInterface
 {
 	/**
@@ -52,6 +48,7 @@ class CommentType extends Base implements IdentifierInterface
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -76,6 +73,7 @@ class CommentType extends Base implements IdentifierInterface
 	 * returns Deletedon
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getDeleted($formatted = true)

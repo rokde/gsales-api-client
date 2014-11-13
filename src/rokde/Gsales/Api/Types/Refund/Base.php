@@ -1,16 +1,12 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Types\Refund;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 12:15
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\Refund
  */
-
-namespace Rokde\Gsales\Api\Types\Refund;
-
-
-class Base extends BaseFilterable {
-
+class Base extends BaseFilterable
+{
 	/**
 	 * @var float
 	 */
@@ -85,4 +81,4 @@ class Base extends BaseFilterable {
 	{
 		return $this->vars_i_pre_txt;
 	}
-} 
+}

@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 11:49
- */
-
-namespace Rokde\Gsales\Api\Types\Comment;
-
+<?php namespace Rokde\Gsales\Api\Types\Comment;
 
 use Rokde\Gsales\Api\Types\Type;
 
-class Base extends Type {
-
+/**
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\Comment
+ */
+class Base extends Type
+{
 	/**
 	 * @var string
 	 */
@@ -32,6 +28,7 @@ class Base extends Type {
 	 * sets comment
 	 *
 	 * @param string $comment
+	 *
 	 * @return $this
 	 */
 	public function setComment($comment)
@@ -54,6 +51,7 @@ class Base extends Type {
 	 * sets record id
 	 *
 	 * @param int $recordid
+	 *
 	 * @return $this
 	 */
 	public function setRecordId($recordid)
@@ -76,6 +74,7 @@ class Base extends Type {
 	 * sets sub
 	 *
 	 * @param string $sub
+	 *
 	 * @return $this
 	 */
 	public function setSub($sub)

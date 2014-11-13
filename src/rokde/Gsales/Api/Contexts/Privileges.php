@@ -1,13 +1,10 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Contexts;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:25
+ * Class Privileges
+ *
+ * @package Rokde\Gsales\Api\Contexts
  */
-
-namespace Rokde\Gsales\Api\Contexts;
-
-
-class Privileges extends Api {
-} 
+class Privileges extends Api
+{
+}

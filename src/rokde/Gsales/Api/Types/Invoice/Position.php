@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:32
- */
-
-namespace Rokde\Gsales\Api\Types\Invoice;
-
+<?php namespace Rokde\Gsales\Api\Types\Invoice;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
-class Position extends BasePosition implements IdentifierInterface {
-
+/**
+ * Class Position
+ *
+ * @package Rokde\Gsales\Api\Types\Invoice
+ */
+class Position extends BasePosition implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
@@ -192,4 +188,4 @@ class Position extends BasePosition implements IdentifierInterface {
 	{
 		return $this->vars_pos_txt;
 	}
-} 
+}

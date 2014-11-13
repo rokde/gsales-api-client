@@ -1,15 +1,10 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Types\Invoice;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:31
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\Invoice
  */
-
-namespace Rokde\Gsales\Api\Types\Invoice;
-
-
-class Base extends BaseFilterable {
-
-
-} 
+class Base extends BaseFilterable
+{
+}

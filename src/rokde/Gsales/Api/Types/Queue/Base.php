@@ -1,19 +1,16 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 15:46
- */
-
-namespace Rokde\Gsales\Api\Types\Queue;
-
+<?php namespace Rokde\Gsales\Api\Types\Queue;
 
 use Rokde\Gsales\Api\Contracts\Approval;
+use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\Type;
 
-class Base extends Type {
-
+/**
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\Queue
+ */
+class Base extends Type
+{
 	/**
 	 * @var int
 	 */
@@ -61,14 +58,15 @@ class Base extends Type {
 
 	/**
 	 * sets customer id
-	 * 
+	 *
 	 * @param int|CustomerType $customer
+	 *
 	 * @return $this
 	 */
 	public function setCustomerId($customer)
 	{
 		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
-		
+
 		$this->customers_id = $customerId;
 		return $this;
 	}
@@ -86,6 +84,7 @@ class Base extends Type {
 	 * sets discount
 	 *
 	 * @param float $discount
+	 *
 	 * @return $this
 	 */
 	public function setDiscount($discount)
@@ -108,6 +107,7 @@ class Base extends Type {
 	 * sets PositionText
 	 *
 	 * @param string $pos_txt
+	 *
 	 * @return $this
 	 */
 	public function setPositionText($pos_txt)
@@ -130,6 +130,7 @@ class Base extends Type {
 	 * sets price
 	 *
 	 * @param float $price
+	 *
 	 * @return $this
 	 */
 	public function setPrice($price)
@@ -152,6 +153,7 @@ class Base extends Type {
 	 * sets quantity
 	 *
 	 * @param float $quantity
+	 *
 	 * @return $this
 	 */
 	public function setQuantity($quantity)
@@ -174,6 +176,7 @@ class Base extends Type {
 	 * sets tax
 	 *
 	 * @param float $tax
+	 *
 	 * @return $this
 	 */
 	public function setTax($tax)
@@ -196,6 +199,7 @@ class Base extends Type {
 	 * sets unit
 	 *
 	 * @param string $unit
+	 *
 	 * @return $this
 	 */
 	public function setUnit($unit)
@@ -218,6 +222,7 @@ class Base extends Type {
 	 * sets useDefaultTax
 	 *
 	 * @param bool $flag
+	 *
 	 * @internal param bool $useDefaultTax
 	 * @return $this
 	 */
@@ -241,11 +246,12 @@ class Base extends Type {
 	 * sets approval
 	 *
 	 * @param int|\Rokde\Gsales\Api\Contracts\Approval $approval
+	 *
 	 * @return $this
 	 */
 	public function setApproval($approval)
 	{
-		$this->approval = (int) $approval;
+		$this->approval = (int)$approval;
 		return $this;
 	}
 

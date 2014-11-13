@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 11:02
- */
-
-namespace Rokde\Gsales\Api\Types\Newsletter;
-
+<?php namespace Rokde\Gsales\Api\Types\Newsletter;
 
 use Rokde\Gsales\Api\Types\Type;
 
-class Base extends Type {
-
+/**
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\Newsletter
+ */
+class Base extends Type
+{
 	/**
 	 * @var bool
 	 */
@@ -47,6 +43,7 @@ class Base extends Type {
 	 * sets body
 	 *
 	 * @param string $body
+	 *
 	 * @return $this
 	 */
 	public function setBody($body)
@@ -69,6 +66,7 @@ class Base extends Type {
 	 * sets body_plain
 	 *
 	 * @param string $body_plain
+	 *
 	 * @return $this
 	 */
 	public function setBodyPlain($body_plain)
@@ -91,6 +89,7 @@ class Base extends Type {
 	 * sets from_email
 	 *
 	 * @param string $from_email
+	 *
 	 * @return $this
 	 */
 	public function setFromEmail($from_email)
@@ -113,6 +112,7 @@ class Base extends Type {
 	 * sets from_name
 	 *
 	 * @param string $from_name
+	 *
 	 * @return $this
 	 */
 	public function setFromName($from_name)
@@ -135,6 +135,7 @@ class Base extends Type {
 	 * sets subject
 	 *
 	 * @param string $subject
+	 *
 	 * @return $this
 	 */
 	public function setSubject($subject)
@@ -157,6 +158,7 @@ class Base extends Type {
 	 * sets useDefaultFrom
 	 *
 	 * @param boolean $useDefaultFrom
+	 *
 	 * @return $this
 	 */
 	public function setUseDefaultFrom($useDefaultFrom)
@@ -174,4 +176,4 @@ class Base extends Type {
 	{
 		return $this->useDefaultFrom;
 	}
-} 
+}

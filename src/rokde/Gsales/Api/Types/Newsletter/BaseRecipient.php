@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 11:07
- */
-
-namespace Rokde\Gsales\Api\Types\Newsletter;
-
+<?php namespace Rokde\Gsales\Api\Types\Newsletter;
 
 use Rokde\Gsales\Api\Types\Type;
 
-class BaseRecipient extends Type {
-
+/**
+ * Class BaseRecipient
+ *
+ * @package Rokde\Gsales\Api\Types\Newsletter
+ */
+class BaseRecipient extends Type
+{
 	/**
 	 * @var string
 	 */
@@ -27,6 +23,7 @@ class BaseRecipient extends Type {
 	 * sets email
 	 *
 	 * @param string $to_email
+	 *
 	 * @return $this
 	 */
 	public function setEmail($to_email)
@@ -49,6 +46,7 @@ class BaseRecipient extends Type {
 	 * sets name
 	 *
 	 * @param string $to_name
+	 *
 	 * @return $this
 	 */
 	public function setName($to_name)
@@ -66,6 +64,4 @@ class BaseRecipient extends Type {
 	{
 		return $this->to_name;
 	}
-
-
-} 
+}

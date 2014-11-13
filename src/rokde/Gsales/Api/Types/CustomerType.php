@@ -1,16 +1,13 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 01.04.14
- * Time: 16:26
- */
-
-namespace Rokde\Gsales\Api\Types;
+<?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
+/**
+ * Class CustomerType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
 class CustomerType extends Type implements IdentifierInterface
 {
 	/**
@@ -180,6 +177,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets customer number
 	 *
 	 * @param string $customerno
+	 *
 	 * @return $this
 	 */
 	public function setCustomerNumber($customerno)
@@ -193,6 +191,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets direct debit
 	 *
 	 * @param bool $flag
+	 *
 	 * @return $this
 	 * @internal param bool $dtaus
 	 */
@@ -207,6 +206,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * set invoices to be spooled
 	 *
 	 * @param bool $flag
+	 *
 	 * @internal param bool $mail_invoices
 	 * @return $this
 	 */
@@ -219,7 +219,9 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * set payment reminders to be spooled
+	 *
 	 * @param bool $flag
+	 *
 	 * @internal param bool $mail_paymreminders
 	 * @return $this
 	 */
@@ -234,6 +236,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets print contact person on documents
 	 *
 	 * @param bool $flag
+	 *
 	 * @return $this
 	 * @internal param int $print_contactperson
 	 */
@@ -248,6 +251,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets sales tax free
 	 *
 	 * @param bool $flag
+	 *
 	 * @return $this
 	 * @internal param int $salestaxfree
 	 */
@@ -262,6 +266,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets the sepa deb signature date
 	 *
 	 * @param null $date
+	 *
 	 * @internal param string $sepa_deb_sig_date date(Y-m-d)
 	 * @return $this
 	 */
@@ -314,6 +319,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets address
 	 *
 	 * @param string $address
+	 *
 	 * @return $this
 	 */
 	public function setAddress($address)
@@ -337,6 +343,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets bank account number
 	 *
 	 * @param string $bank_account_no
+	 *
 	 * @return $this
 	 */
 	public function setBankAccountNumber($bank_account_no)
@@ -360,6 +367,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets bank account owner
 	 *
 	 * @param string $bank_account_owner
+	 *
 	 * @return $this
 	 */
 	public function setBankAccountOwner($bank_account_owner)
@@ -383,6 +391,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * returns bank identification code
 	 *
 	 * @param string $bank_bic
+	 *
 	 * @return $this
 	 */
 	public function setBankBic($bank_bic)
@@ -406,6 +415,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets bank code
 	 *
 	 * @param string $bank_code
+	 *
 	 * @return $this
 	 */
 	public function setBankCode($bank_code)
@@ -429,6 +439,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets bank iban
 	 *
 	 * @param string $bank_iban
+	 *
 	 * @return $this
 	 */
 	public function setBankIban($bank_iban)
@@ -452,6 +463,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets bank institute name
 	 *
 	 * @param string $bank_name
+	 *
 	 * @return $this
 	 */
 	public function setBankName($bank_name)
@@ -475,6 +487,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets mobile number
 	 *
 	 * @param string $cellular
+	 *
 	 * @return $this
 	 */
 	public function setCellular($cellular)
@@ -498,6 +511,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets city
 	 *
 	 * @param string $city
+	 *
 	 * @return $this
 	 */
 	public function setCity($city)
@@ -521,6 +535,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets company name
 	 *
 	 * @param string $company
+	 *
 	 * @return $this
 	 */
 	public function setCompany($company)
@@ -554,6 +569,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets country
 	 *
 	 * @param string $country
+	 *
 	 * @return $this
 	 */
 	public function setCountry($country)
@@ -567,6 +583,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * returns created at
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -591,6 +608,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets custom1
 	 *
 	 * @param string $custom1
+	 *
 	 * @return $this
 	 */
 	public function setCustom1($custom1)
@@ -614,6 +632,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets custom2
 	 *
 	 * @param string $custom2
+	 *
 	 * @return $this
 	 */
 	public function setCustom2($custom2)
@@ -637,6 +656,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets custom3
 	 *
 	 * @param string $custom3
+	 *
 	 * @return $this
 	 */
 	public function setCustom3($custom3)
@@ -660,6 +680,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets custom4
 	 *
 	 * @param string $custom4
+	 *
 	 * @return $this
 	 */
 	public function setCustom4($custom4)
@@ -683,6 +704,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets custom5
 	 *
 	 * @param string $custom5
+	 *
 	 * @return $this
 	 */
 	public function setCustom5($custom5)
@@ -726,6 +748,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets email
 	 *
 	 * @param string $email
+	 *
 	 * @return $this
 	 */
 	public function setEmail($email)
@@ -749,6 +772,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets fax
 	 *
 	 * @param string $fax
+	 *
 	 * @return $this
 	 */
 	public function setFax($fax)
@@ -771,6 +795,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets first name
 	 *
 	 * @param string $firstname
+	 *
 	 * @return $this
 	 */
 	public function setFirstname($firstname)
@@ -804,6 +829,7 @@ class CustomerType extends Type implements IdentifierInterface
 	 * sets homepage
 	 *
 	 * @param string $homepage
+	 *
 	 * @return $this
 	 */
 	public function setHomepage($homepage)
@@ -906,6 +932,7 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getSepaDebSignatureDate($formatted = true)
@@ -1003,6 +1030,6 @@ class CustomerType extends Type implements IdentifierInterface
 	public function getCustomerNumberOrEmail()
 	{
 		$customerNo = $this->getCustomerNumber();
-		return (!empty($customerNo)) ? $customerNo : $this->getEmail();
+		return ( ! empty($customerNo)) ? $customerNo : $this->getEmail();
 	}
 }

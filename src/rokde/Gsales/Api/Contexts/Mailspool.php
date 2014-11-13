@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:21
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\MailspoolType;
 use Rokde\Gsales\Api\Types\Sort;
 
+/**
+ * Class Mailspool
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
 class Mailspool extends Api {
 
 	/**

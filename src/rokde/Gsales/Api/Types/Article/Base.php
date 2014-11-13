@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 11:28
- */
-
-namespace Rokde\Gsales\Api\Types\Article;
-
+<?php namespace Rokde\Gsales\Api\Types\Article;
 
 use Rokde\Gsales\Api\Types\Type;
 
-class Base extends Type {
-
+/**
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\Article
+ */
+class Base extends Type
+{
 	/**
 	 * @var string
 	 */
@@ -67,6 +63,7 @@ class Base extends Type {
 	 * sets custom1
 	 *
 	 * @param string $custom1
+	 *
 	 * @return $this
 	 */
 	public function setCustom1($custom1)
@@ -89,6 +86,7 @@ class Base extends Type {
 	 * sets custom2
 	 *
 	 * @param string $custom2
+	 *
 	 * @return $this
 	 */
 	public function setCustom2($custom2)
@@ -111,6 +109,7 @@ class Base extends Type {
 	 * sets custom3
 	 *
 	 * @param string $custom3
+	 *
 	 * @return $this
 	 */
 	public function setCustom3($custom3)
@@ -133,6 +132,7 @@ class Base extends Type {
 	 * sets PurchasePrice
 	 *
 	 * @param float $eprice
+	 *
 	 * @return $this
 	 */
 	public function setPurchasePrice($eprice)
@@ -155,6 +155,7 @@ class Base extends Type {
 	 * sets pos_txt
 	 *
 	 * @param string $pos_txt
+	 *
 	 * @return $this
 	 */
 	public function setPositionText($pos_txt)
@@ -177,6 +178,7 @@ class Base extends Type {
 	 * sets price
 	 *
 	 * @param float $price
+	 *
 	 * @return $this
 	 */
 	public function setRetailPrice($price)
@@ -199,6 +201,7 @@ class Base extends Type {
 	 * sets tax
 	 *
 	 * @param float $tax
+	 *
 	 * @return $this
 	 */
 	public function setTax($tax)
@@ -221,6 +224,7 @@ class Base extends Type {
 	 * sets title
 	 *
 	 * @param string $title
+	 *
 	 * @return $this
 	 */
 	public function setTitle($title)
@@ -243,6 +247,7 @@ class Base extends Type {
 	 * sets unit
 	 *
 	 * @param string $unit
+	 *
 	 * @return $this
 	 */
 	public function setUnit($unit)
@@ -265,6 +270,7 @@ class Base extends Type {
 	 * sets useDefaultTax
 	 *
 	 * @param boolean $useDefaultTax
+	 *
 	 * @return $this
 	 */
 	public function setUseDefaultTax($useDefaultTax)
@@ -282,6 +288,4 @@ class Base extends Type {
 	{
 		return $this->useDefaultTax;
 	}
-
-
-} 
+}

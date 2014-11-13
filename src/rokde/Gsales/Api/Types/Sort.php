@@ -1,31 +1,25 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 01.04.14
- * Time: 17:56
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use InvalidArgumentException;
 
-class Sort extends Type {
-
+/**
+ * Class Sort
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class Sort extends Type
+{
 	/**
-	 *
+	 * sort directions
 	 */
 	const ASC = 'ASC';
-	/**
-	 *
-	 */
 	const DESC = 'DESC';
 
 	/**
 	 * @var
 	 */
 	private $field;
+
 	/**
 	 * @var
 	 */
@@ -59,13 +53,13 @@ class Sort extends Type {
 
 	/**
 	 * @param string $direction
+	 *
 	 * @throws \InvalidArgumentException
 	 * @return $this
 	 */
 	public function setDirection($direction)
 	{
-		if (!in_array($direction, [self::ASC, self::DESC]))
-		{
+		if ( ! in_array($direction, [self::ASC, self::DESC])) {
 			throw new InvalidArgumentException('Direction has to be ' . self::ASC . ' or ' . self::DESC);
 		}
 
@@ -84,6 +78,7 @@ class Sort extends Type {
 
 	/**
 	 * @param mixed $field
+	 *
 	 * @return $this
 	 */
 	public function setField($field)
@@ -100,4 +95,4 @@ class Sort extends Type {
 	{
 		return $this->field;
 	}
-} 
+}

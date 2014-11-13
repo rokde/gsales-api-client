@@ -1,16 +1,12 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Types;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 01.04.14
- * Time: 15:35
+ * Class Status
+ *
+ * @package Rokde\Gsales\Api\Types
  */
-
-namespace Rokde\Gsales\Api\Types;
-
-
-class Status extends Type {
-
+class Status extends Type
+{
 	/**
 	 * @var int
 	 */
@@ -49,6 +45,7 @@ class Status extends Type {
 	 * returns a message by status code
 	 *
 	 * @param int $code
+	 *
 	 * @return string
 	 */
 	static public function getStatusMessage($code)

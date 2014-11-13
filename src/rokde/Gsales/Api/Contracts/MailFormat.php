@@ -1,18 +1,13 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Contracts;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 16:49
+ * Interface MailFormat
+ *
+ * @package Rokde\Gsales\Api\Contracts
  */
-
-namespace Rokde\Gsales\Api\Contracts;
-
-
-interface MailFormat {
-
+interface MailFormat
+{
 	const HTML_AND_PLAINTEXT = 0;
 	const PLAINTEXT_ONLY = 1;
 	const HTML_ONLY = 2;
-
-} 
+}

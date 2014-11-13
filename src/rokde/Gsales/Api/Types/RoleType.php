@@ -1,26 +1,24 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 12:19
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
-class RoleType extends Type implements IdentifierInterface {
-
+/**
+ * Class RoleType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class RoleType extends Type implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
 	protected $id;
+
 	/**
 	 * @var string
 	 */
 	protected $name;
+
 	/**
 	 * @var string
 	 */

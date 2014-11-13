@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 11:07
- */
-
-namespace Rokde\Gsales\Api\Types\Newsletter;
-
+<?php namespace Rokde\Gsales\Api\Types\Newsletter;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
-class Recipient extends BaseRecipient implements IdentifierInterface {
-
+/**
+ * Class Recipient
+ *
+ * @package Rokde\Gsales\Api\Types\Newsletter
+ */
+class Recipient extends BaseRecipient implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */
@@ -78,6 +74,7 @@ class Recipient extends BaseRecipient implements IdentifierInterface {
 	 * returns Rcreated
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function createdAt($formatted = true)
@@ -92,6 +89,7 @@ class Recipient extends BaseRecipient implements IdentifierInterface {
 	 * returns Rsent
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function sentAt($formatted = true)
@@ -106,6 +104,7 @@ class Recipient extends BaseRecipient implements IdentifierInterface {
 	 * returns Rspooled
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function spooledAt($formatted = true)
@@ -120,6 +119,7 @@ class Recipient extends BaseRecipient implements IdentifierInterface {
 	 * returns Rtracked
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function trackedAt($formatted = true)

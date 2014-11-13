@@ -1,16 +1,12 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Contracts;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 10:33
+ * Interface OfferStatus
+ *
+ * @package Rokde\Gsales\Api\Contracts
  */
-
-namespace Rokde\Gsales\Api\Contracts;
-
-
-interface OfferStatus {
-
+interface OfferStatus
+{
 	/**
 	 * an offer is open
 	 */
@@ -25,5 +21,4 @@ interface OfferStatus {
 	 * an offer was approved
 	 */
 	const APPROVED = 2;
-
-} 
+}

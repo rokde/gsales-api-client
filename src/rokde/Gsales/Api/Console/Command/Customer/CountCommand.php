@@ -1,21 +1,28 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 14:13
- */
-
-namespace Rokde\Gsales\Api\Console\Command\Customer;
-
+<?php namespace Rokde\Gsales\Api\Console\Command\Customer;
 
 use Rokde\Gsales\Api\Console\Command\ApiCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CountCommand extends ApiCommand {
-
+/**
+ * Class CountCommand
+ *
+ * @package Rokde\Gsales\Api\Console\Command\Customer
+ */
+class CountCommand extends ApiCommand
+{
+	/**
+	 * command name
+	 *
+	 * @var string
+	 */
 	protected $commandName = 'customer:count';
+
+	/**
+	 * description
+	 *
+	 * @var string
+	 */
 	protected $description = 'fetches the number of all customers';
 
 	/**
@@ -23,6 +30,7 @@ class CountCommand extends ApiCommand {
 	 *
 	 * @param InputInterface $input
 	 * @param OutputInterface $output
+	 *
 	 * @return int|null|void
 	 */
 	protected function execute(InputInterface $input, OutputInterface $output)

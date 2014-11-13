@@ -1,18 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 16:21
- */
-
-namespace Rokde\Gsales\Api\Types\Base;
-
+<?php namespace Rokde\Gsales\Api\Types\Base;
 
 use Rokde\Gsales\Api\Types\Type;
 
-class Position extends Type {
-
+/**
+ * Class Position
+ *
+ * @package Rokde\Gsales\Api\Types\Base
+ */
+class Position extends Type
+{
 	/**
 	 * @var float
 	 */
@@ -52,6 +48,7 @@ class Position extends Type {
 	 * sets discount
 	 *
 	 * @param float $discount
+	 *
 	 * @return $this
 	 */
 	public function setDiscount($discount)
@@ -74,6 +71,7 @@ class Position extends Type {
 	 * sets PositionText
 	 *
 	 * @param string $pos_txt
+	 *
 	 * @return $this
 	 */
 	public function setPositionText($pos_txt)
@@ -96,6 +94,7 @@ class Position extends Type {
 	 * sets price
 	 *
 	 * @param float $price
+	 *
 	 * @return $this
 	 */
 	public function setPrice($price)
@@ -118,6 +117,7 @@ class Position extends Type {
 	 * sets quantity
 	 *
 	 * @param float $quantity
+	 *
 	 * @return $this
 	 */
 	public function setQuantity($quantity)
@@ -140,6 +140,7 @@ class Position extends Type {
 	 * sets tax
 	 *
 	 * @param float $tax
+	 *
 	 * @return $this
 	 */
 	public function setTax($tax)
@@ -162,6 +163,7 @@ class Position extends Type {
 	 * sets unit
 	 *
 	 * @param string $unit
+	 *
 	 * @return $this
 	 */
 	public function setUnit($unit)
@@ -184,6 +186,7 @@ class Position extends Type {
 	 * sets useDefaultTax
 	 *
 	 * @param bool $flag
+	 *
 	 * @internal param bool $useDefaultTax
 	 * @return $this
 	 */
@@ -202,5 +205,4 @@ class Position extends Type {
 	{
 		return $this->useDefaultTax;
 	}
-
-} 
+}

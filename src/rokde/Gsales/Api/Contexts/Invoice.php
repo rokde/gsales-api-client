@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:11
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\File;
@@ -18,12 +9,18 @@ use Rokde\Gsales\Api\Types\Invoice\BasePosition;
 use Rokde\Gsales\Api\Types\Invoice\Position;
 use Rokde\Gsales\Api\Types\Sort;
 
-class Invoice extends Api {
-
+/**
+ * Class Invoice
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class Invoice extends Api
+{
 	/**
 	 * returns an invoice by id
 	 *
 	 * @param int $invoiceId
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function get($invoiceId)
@@ -38,6 +35,7 @@ class Invoice extends Api {
 	 * @param Sort $sort
 	 * @param int $limit
 	 * @param int $offset
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -49,6 +47,7 @@ class Invoice extends Api {
 	 * returns number of invoices by filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -60,6 +59,7 @@ class Invoice extends Api {
 	 * marks an invoice as paid
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType|int $invoice
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function paid($invoice)
@@ -71,6 +71,7 @@ class Invoice extends Api {
 	 * marks an invoice as open
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType|int $invoice
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function open($invoice)
@@ -82,6 +83,7 @@ class Invoice extends Api {
 	 * marks an invoice as canceled
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType|int $invoice
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function canceled($invoice)
@@ -94,6 +96,7 @@ class Invoice extends Api {
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType|int $invoice
 	 * @param BasePosition $position
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function createPosition($invoice, BasePosition $position)
@@ -108,6 +111,7 @@ class Invoice extends Api {
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType|int $invoice
 	 * @param Position $position
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function updatePosition($invoice, Position $position)
@@ -123,6 +127,7 @@ class Invoice extends Api {
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType|int $invoice
 	 * @param Position|int $position
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function deletePosition($invoice, $position)
@@ -137,6 +142,7 @@ class Invoice extends Api {
 	 * deletes an invoice
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType|int $invoice
+	 *
 	 * @return bool
 	 */
 	public function delete($invoice)
@@ -150,6 +156,7 @@ class Invoice extends Api {
 	 * creates an invoice for a customer
 	 *
 	 * @param Customer|int $customer
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function createForCustomer($customer)
@@ -163,6 +170,7 @@ class Invoice extends Api {
 	 * creates an invoice
 	 *
 	 * @param Base $invoice
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function create(Base $invoice)
@@ -174,6 +182,7 @@ class Invoice extends Api {
 	 * creates an invoice
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType $invoice
+	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
 	public function update(InvoiceType $invoice)
@@ -187,6 +196,7 @@ class Invoice extends Api {
 	 * adds invoice to mailspool
 	 *
 	 * @param \Rokde\Gsales\Api\Types\InvoiceType $invoice
+	 *
 	 * @return bool
 	 */
 	public function addToMailspool($invoice)
@@ -200,6 +210,7 @@ class Invoice extends Api {
 	 * returns pdf file of invoice
 	 *
 	 * @param $invoice
+	 *
 	 * @return File
 	 */
 	public function pdf($invoice)

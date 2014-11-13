@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 10:28
- */
-
-namespace Rokde\Gsales\Api\Types\Offer;
-
+<?php namespace Rokde\Gsales\Api\Types\Offer;
 
 use DateTime;
 use Rokde\Gsales\Api\Types\Base\Filterable;
 
-class BaseFilterable extends Filterable {
-
+/**
+ * Class BaseFilterable
+ *
+ * @package Rokde\Gsales\Api\Types\Offer
+ */
+class BaseFilterable extends Filterable
+{
 	/**
 	 * @var string date(Y-m-d)
 	 */
@@ -23,6 +19,7 @@ class BaseFilterable extends Filterable {
 	 * sets valid until
 	 *
 	 * @param string $validuntil
+	 *
 	 * @return $this
 	 */
 	public function setValidUntil($validuntil)
@@ -35,6 +32,7 @@ class BaseFilterable extends Filterable {
 	 * returns Valid until
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getValidUntil($formatted = true)
@@ -44,4 +42,4 @@ class BaseFilterable extends Filterable {
 
 		return $this->validuntil;
 	}
-} 
+}

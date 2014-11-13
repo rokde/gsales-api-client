@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:40
- */
-
-namespace Rokde\Gsales\Api\Types\Base;
-
+<?php namespace Rokde\Gsales\Api\Types\Base;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Contracts\OfferStatus;
 use Rokde\Gsales\Api\Types\Type;
 
+/**
+ * Class Filterable
+ *
+ * @package Rokde\Gsales\Api\Types\Base
+ */
 class Filterable extends Type implements IdentifierInterface
 {
 	/**
@@ -175,6 +171,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets id
 	 *
 	 * @param int $id
+	 *
 	 * @return $this
 	 */
 	public function setId($id)
@@ -197,6 +194,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -211,6 +209,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets user id
 	 *
 	 * @param int $user_id
+	 *
 	 * @return $this
 	 */
 	public function setUserId($user_id)
@@ -234,6 +233,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets InvoiceNumber
 	 *
 	 * @param string $invoiceno
+	 *
 	 * @return $this
 	 */
 	public function setInvoiceNumber($invoiceno)
@@ -256,6 +256,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets pos count
 	 *
 	 * @param int $poscount
+	 *
 	 * @return $this
 	 */
 	public function setPositionCount($poscount)
@@ -278,6 +279,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets amount
 	 *
 	 * @param float $amount
+	 *
 	 * @return $this
 	 */
 	public function setAmount($amount)
@@ -300,6 +302,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets net amount
 	 *
 	 * @param float $netamount
+	 *
 	 * @return $this
 	 */
 	public function setNetAmount($netamount)
@@ -322,6 +325,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer id
 	 *
 	 * @param int $customers_id
+	 *
 	 * @return $this
 	 */
 	public function setCustomerId($customers_id)
@@ -344,6 +348,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer address
 	 *
 	 * @param string $customer_address
+	 *
 	 * @return $this
 	 */
 	public function setCustomerAddress($customer_address)
@@ -366,6 +371,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer city
 	 *
 	 * @param string $customer_city
+	 *
 	 * @return $this
 	 */
 	public function setCustomerCity($customer_city)
@@ -388,6 +394,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer company
 	 *
 	 * @param string $customer_company
+	 *
 	 * @return $this
 	 */
 	public function setCustomerCompany($customer_company)
@@ -410,6 +417,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer country
 	 *
 	 * @param string $customer_country
+	 *
 	 * @return $this
 	 */
 	public function setCustomerCountry($customer_country)
@@ -432,6 +440,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer firstname
 	 *
 	 * @param string $customer_firstname
+	 *
 	 * @return $this
 	 */
 	public function setCustomerFirstname($customer_firstname)
@@ -454,6 +463,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer lastname
 	 *
 	 * @param string $customer_lastname
+	 *
 	 * @return $this
 	 */
 	public function setCustomerLastname($customer_lastname)
@@ -476,6 +486,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer title
 	 *
 	 * @param string $customer_title
+	 *
 	 * @return $this
 	 */
 	public function setCustomerTitle($customer_title)
@@ -498,6 +509,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer zip
 	 *
 	 * @param string $customer_zip
+	 *
 	 * @return $this
 	 */
 	public function setCustomerZip($customer_zip)
@@ -520,6 +532,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets customer number
 	 *
 	 * @param string $customerno
+	 *
 	 * @return $this
 	 */
 	public function setCustomerNumber($customerno)
@@ -542,6 +555,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets print contact person
 	 *
 	 * @param int $print_contactperson
+	 *
 	 * @return $this
 	 */
 	public function setPrintContactPerson($print_contactperson)
@@ -564,6 +578,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets status_date
 	 *
 	 * @param string $status_date
+	 *
 	 * @return $this
 	 */
 	public function setStatusDate($status_date)
@@ -576,6 +591,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * returns StatusDate
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getStatusDate($formatted = true)
@@ -590,6 +606,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets status_id
 	 *
 	 * @param \Rokde\Gsales\Api\Contracts\OfferStatus $status
+	 *
 	 * @internal param int $status_id
 	 * @return $this
 	 */
@@ -614,6 +631,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets curr_id
 	 *
 	 * @param int $curr_id
+	 *
 	 * @return $this
 	 */
 	public function setCurrencyId($curr_id)
@@ -636,6 +654,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets currency rate
 	 *
 	 * @param float $curr_rate
+	 *
 	 * @return $this
 	 */
 	public function setCurrencyRate($curr_rate)
@@ -658,6 +677,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets currency symbol
 	 *
 	 * @param string $curr_symbol
+	 *
 	 * @return $this
 	 */
 	public function setCurrencySymbol($curr_symbol)
@@ -680,6 +700,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets ClosingText
 	 *
 	 * @param string $i_post_txt
+	 *
 	 * @return $this
 	 */
 	public function setClosingText($i_post_txt)
@@ -702,6 +723,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets IntroductionText
 	 *
 	 * @param string $i_pre_txt
+	 *
 	 * @return $this
 	 */
 	public function setIntroductionText($i_pre_txt)
@@ -724,6 +746,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets template
 	 *
 	 * @param string $template
+	 *
 	 * @return $this
 	 */
 	public function setTemplate($template)
@@ -756,6 +779,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets custom1
 	 *
 	 * @param string $custom1
+	 *
 	 * @return $this
 	 */
 	public function setCustom1($custom1)
@@ -779,6 +803,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets custom2
 	 *
 	 * @param string $custom2
+	 *
 	 * @return $this
 	 */
 	public function setCustom2($custom2)
@@ -802,6 +827,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets custom3
 	 *
 	 * @param string $custom3
+	 *
 	 * @return $this
 	 */
 	public function setCustom3($custom3)
@@ -825,6 +851,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets custom4
 	 *
 	 * @param string $custom4
+	 *
 	 * @return $this
 	 */
 	public function setCustom4($custom4)
@@ -848,6 +875,7 @@ class Filterable extends Type implements IdentifierInterface
 	 * sets custom5
 	 *
 	 * @param string $custom5
+	 *
 	 * @return $this
 	 */
 	public function setCustom5($custom5)

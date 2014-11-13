@@ -1,50 +1,36 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:33
- */
-
-namespace Rokde\Gsales\Api\Types\Invoice;
-
+<?php namespace Rokde\Gsales\Api\Types\Invoice;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Type;
 
-class DunningAction extends Type implements IdentifierInterface {
-
+/**
+ * Class DunningAction
+ *
+ * @package Rokde\Gsales\Api\Types\Invoice
+ */
+class DunningAction extends Type implements IdentifierInterface
+{
 	/**
-	 *
-	 *
 	 * @var int
 	 */
 	protected $id;
 
 	/**
-	 *
-	 *
 	 * @var int
 	 */
 	protected $invoices_id;
 
 	/**
-	 *
-	 *
 	 * @var string date(Y-m-d H:i:s)
 	 */
 	protected $created;
 
 	/**
-	 *
-	 *
 	 * @var int
 	 */
 	protected $action;
 
 	/**
-	 *
-	 *
 	 * @var float
 	 */
 	protected $fee;
@@ -63,6 +49,7 @@ class DunningAction extends Type implements IdentifierInterface {
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|\DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -102,6 +89,4 @@ class DunningAction extends Type implements IdentifierInterface {
 	{
 		return $this->invoices_id;
 	}
-
-
-} 
+}

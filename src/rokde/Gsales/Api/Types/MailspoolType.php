@@ -1,21 +1,16 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 16:07
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Contracts\MailFormat;
 
+/**
+ * Class MailspoolType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
 class MailspoolType extends Type implements IdentifierInterface
 {
-
 	/**
 	 * @var int
 	 */
@@ -110,6 +105,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets attachments
 	 *
 	 * @param \Rokde\Gsales\Api\Types\Attachment[] $attachements
+	 *
 	 * @return $this
 	 */
 	public function setAttachments($attachements)
@@ -132,6 +128,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * adds an attachment
 	 *
 	 * @param Attachment $attachment
+	 *
 	 * @return $this
 	 */
 	public function addAttachment(Attachment $attachment)
@@ -145,6 +142,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 *
 	 * @param string $body
 	 * @param string $plain
+	 *
 	 * @return $this
 	 */
 	public function setBody($body, $plain = '')
@@ -169,6 +167,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets body_plain
 	 *
 	 * @param string $body_plain
+	 *
 	 * @return $this
 	 */
 	public function setBodyPlain($body_plain)
@@ -191,6 +190,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets created
 	 *
 	 * @param string $created
+	 *
 	 * @return $this
 	 */
 	public function setCreated($created)
@@ -203,6 +203,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * returns Created
 	 *
 	 * @param bool $formatted
+	 *
 	 * @return string|DateTime
 	 */
 	public function getCreated($formatted = true)
@@ -217,6 +218,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets errors
 	 *
 	 * @param string $errors
+	 *
 	 * @return $this
 	 */
 	public function setErrors($errors)
@@ -239,6 +241,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets from_email
 	 *
 	 * @param string $from_email
+	 *
 	 * @return $this
 	 */
 	public function setFromEmail($from_email)
@@ -261,6 +264,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets from_name
 	 *
 	 * @param string $from_name
+	 *
 	 * @return $this
 	 */
 	public function setFromName($from_name)
@@ -293,6 +297,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets mailformat
 	 *
 	 * @param int|\Rokde\Gsales\Api\Contracts\MailFormat $mailformat
+	 *
 	 * @return $this
 	 */
 	public function setMailFormat(MailFormat $mailformat)
@@ -315,6 +320,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets send_approval
 	 *
 	 * @param int $send_approval
+	 *
 	 * @return $this
 	 */
 	public function setSendApproval($send_approval)
@@ -337,6 +343,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets sendplan_actionid
 	 *
 	 * @param int $sendplan_actionid
+	 *
 	 * @return $this
 	 */
 	public function setSendplanActionid($sendplan_actionid)
@@ -359,6 +366,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets sent
 	 *
 	 * @param string $sent
+	 *
 	 * @return $this
 	 */
 	public function setSent($sent)
@@ -381,6 +389,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets sub
 	 *
 	 * @param string $sub
+	 *
 	 * @return $this
 	 */
 	public function setSub($sub)
@@ -403,6 +412,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets sub_recordset_id
 	 *
 	 * @param int $sub_recordset_id
+	 *
 	 * @return $this
 	 */
 	public function setSubRecordsetId($sub_recordset_id)
@@ -425,6 +435,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets subject
 	 *
 	 * @param string $subject
+	 *
 	 * @return $this
 	 */
 	public function setSubject($subject)
@@ -447,6 +458,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets to_email
 	 *
 	 * @param string $to_email
+	 *
 	 * @return $this
 	 */
 	public function setToEmail($to_email)
@@ -469,6 +481,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets to_name
 	 *
 	 * @param string $to_name
+	 *
 	 * @return $this
 	 */
 	public function setToName($to_name)
@@ -491,6 +504,7 @@ class MailspoolType extends Type implements IdentifierInterface
 	 * sets tracked
 	 *
 	 * @param string $tracked
+	 *
 	 * @return $this
 	 */
 	public function setTracked($tracked)
@@ -508,6 +522,4 @@ class MailspoolType extends Type implements IdentifierInterface
 	{
 		return $this->tracked;
 	}
-
-
-} 
+}

@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 14:41
- */
-
-namespace Rokde\Gsales\Api\Contexts;
-
+<?php namespace Rokde\Gsales\Api\Contexts;
 
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\File;
@@ -18,12 +9,18 @@ use Rokde\Gsales\Api\Types\Offer\Position;
 use Rokde\Gsales\Api\Types\OfferType;
 use Rokde\Gsales\Api\Types\Sort;
 
-class Offer extends Api {
-
+/**
+ * Class Offer
+ *
+ * @package Rokde\Gsales\Api\Contexts
+ */
+class Offer extends Api
+{
 	/**
 	 * fetches an offer by id
 	 *
 	 * @param int $offerId
+	 *
 	 * @return OfferType
 	 */
 	public function get($offerId)
@@ -38,6 +35,7 @@ class Offer extends Api {
 	 * @param Sort $sort
 	 * @param null $limit
 	 * @param null $offset
+	 *
 	 * @return OfferType[]
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
@@ -49,6 +47,7 @@ class Offer extends Api {
 	 * returns number of offers by given filter
 	 *
 	 * @param Filter[] $filter
+	 *
 	 * @return int
 	 */
 	public function count($filter = null)
@@ -60,6 +59,7 @@ class Offer extends Api {
 	 * accepts an offer
 	 *
 	 * @param OfferType|int $offer
+	 *
 	 * @return OfferType
 	 */
 	public function accept($offer)
@@ -71,6 +71,7 @@ class Offer extends Api {
 	 * declines an offer
 	 *
 	 * @param OfferType|int $offer
+	 *
 	 * @return OfferType
 	 */
 	public function declined($offer)
@@ -82,6 +83,7 @@ class Offer extends Api {
 	 * marks an offer as open
 	 *
 	 * @param OfferType|int $offer
+	 *
 	 * @return OfferType
 	 */
 	public function open($offer)
@@ -93,6 +95,7 @@ class Offer extends Api {
 	 * marks an offer as billed
 	 *
 	 * @param OfferType|int $offer
+	 *
 	 * @return OfferType
 	 */
 	public function billed($offer)
@@ -105,6 +108,7 @@ class Offer extends Api {
 	 *
 	 * @param OfferType|int $offer
 	 * @param \Rokde\Gsales\Api\Types\Offer\BasePosition $position
+	 *
 	 * @return OfferType
 	 */
 	public function createPosition($offer, BasePosition $position)
@@ -119,6 +123,7 @@ class Offer extends Api {
 	 *
 	 * @param OfferType|int $offer
 	 * @param \Rokde\Gsales\Api\Types\Offer\Position $position
+	 *
 	 * @return OfferType
 	 */
 	public function updatePosition($offer, Position $position)
@@ -134,6 +139,7 @@ class Offer extends Api {
 	 *
 	 * @param OfferType|int $offer
 	 * @param \Rokde\Gsales\Api\Types\Offer\Position|int $position
+	 *
 	 * @return OfferType
 	 */
 	public function deletePosition($offer, $position)
@@ -148,6 +154,7 @@ class Offer extends Api {
 	 * deletes an offer
 	 *
 	 * @param OfferType|int $offer
+	 *
 	 * @return bool
 	 */
 	public function delete($offer)
@@ -161,6 +168,7 @@ class Offer extends Api {
 	 * creates an offer for a customer
 	 *
 	 * @param CustomerType|int $customer
+	 *
 	 * @return OfferType
 	 */
 	public function createForCustomer($customer)
@@ -174,6 +182,7 @@ class Offer extends Api {
 	 * creates an offer for a customer
 	 *
 	 * @param \Rokde\Gsales\Api\Types\Offer\Base $offer
+	 *
 	 * @return OfferType
 	 */
 	public function create(Base $offer)
@@ -185,6 +194,7 @@ class Offer extends Api {
 	 * creates an offer for a customer
 	 *
 	 * @param \Rokde\Gsales\Api\Types\OfferType $offer
+	 *
 	 * @return OfferType
 	 */
 	public function update(OfferType $offer)
@@ -199,6 +209,7 @@ class Offer extends Api {
 	 * adds offer to mailspool
 	 *
 	 * @param OfferType|int $offer
+	 *
 	 * @return bool
 	 */
 	public function addToMailspool($offer)
@@ -212,6 +223,7 @@ class Offer extends Api {
 	 * returns pdf for offer
 	 *
 	 * @param OfferType|int $offer
+	 *
 	 * @return File
 	 */
 	public function pdf($offer)

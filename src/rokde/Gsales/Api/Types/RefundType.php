@@ -1,21 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:31
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Refund\Base;
 use Rokde\Gsales\Api\Types\Refund\Position;
 use Rokde\Gsales\Api\Types\Refund\Sum;
 
-class RefundType extends Type implements IdentifierInterface {
-
+/**
+ * Class RefundType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class RefundType extends Type implements IdentifierInterface
+{
 	/**
 	 * base data
 	 *

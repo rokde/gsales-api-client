@@ -1,20 +1,16 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Contracts;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 13:07
+ * Interface IdentifierInterface
+ *
+ * @package Rokde\Gsales\Api\Contracts
  */
-
-namespace Rokde\Gsales\Api\Contracts;
-
-
-interface IdentifierInterface {
-
+interface IdentifierInterface
+{
 	/**
 	 * returns an unique identifier for the object
 	 *
 	 * @return int
 	 */
 	public function getId();
-} 
+}

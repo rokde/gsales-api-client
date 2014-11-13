@@ -1,16 +1,12 @@
-<?php
+<?php namespace Rokde\Gsales\Api\Types\Contract;
+
 /**
- * Created by PhpStorm.
- * User: rok
- * Date: 03.04.14
- * Time: 14:07
+ * Class Base
+ *
+ * @package Rokde\Gsales\Api\Types\Contract
  */
-
-namespace Rokde\Gsales\Api\Types\Contract;
-
-
-class Base extends BaseFilterable {
-
+class Base extends BaseFilterable
+{
 	/**
 	 * @var float
 	 */

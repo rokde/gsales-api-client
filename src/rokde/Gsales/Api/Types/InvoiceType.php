@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 02.04.14
- * Time: 15:31
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\Invoice\Base;
@@ -15,8 +6,12 @@ use Rokde\Gsales\Api\Types\Invoice\DunningAction;
 use Rokde\Gsales\Api\Types\Invoice\Position;
 use Rokde\Gsales\Api\Types\Invoice\Sum;
 
-class InvoiceType extends Type implements IdentifierInterface {
-
+/**
+ * Class InvoiceType
+ * @package Rokde\Gsales\Api\Types
+ */
+class InvoiceType extends Type implements IdentifierInterface
+{
 	/**
 	 * base data
 	 *

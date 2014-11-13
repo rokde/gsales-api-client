@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 04.04.14
- * Time: 12:08
- */
-
-namespace Rokde\Gsales\Api\Types;
-
+<?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 use Rokde\Gsales\Api\Types\User\Base;
 
-class UserType extends Base implements IdentifierInterface {
-
+/**
+ * Class UserType
+ *
+ * @package Rokde\Gsales\Api\Types
+ */
+class UserType extends Base implements IdentifierInterface
+{
 	/**
 	 * @var int
 	 */

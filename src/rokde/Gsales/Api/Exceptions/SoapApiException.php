@@ -1,19 +1,15 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rok
- * Date: 01.04.14
- * Time: 16:20
- */
-
-namespace Rokde\Gsales\Api\Exceptions;
-
+<?php namespace Rokde\Gsales\Api\Exceptions;
 
 use Exception;
 use SoapClient;
 
-class SoapApiException extends ApiException {
-
+/**
+ * Class SoapApiException
+ *
+ * @package Rokde\Gsales\Api\Exceptions
+ */
+class SoapApiException extends ApiException
+{
 	/**
 	 * @var \SoapClient
 	 */
