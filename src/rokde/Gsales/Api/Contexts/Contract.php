@@ -8,6 +8,7 @@ use Rokde\Gsales\Api\Types\ContractType;
 use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\Filter;
 use Rokde\Gsales\Api\Types\Sort;
+use Rokde\Gsales\Api\Types\Type;
 
 /**
  * Class Contract
@@ -22,6 +23,8 @@ class Contract extends Api
 	 * @param int $contractId
 	 *
 	 * @return \Rokde\Gsales\Api\Types\ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.1
 	 */
 	public function get($contractId)
 	{
@@ -37,6 +40,8 @@ class Contract extends Api
 	 * @param int $offset
 	 *
 	 * @return \Rokde\Gsales\Api\Types\ContractType[]
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.2
 	 */
 	public function all($filter = null, $sort = null, $limit = null, $offset = null)
 	{
@@ -72,7 +77,7 @@ class Contract extends Api
 	 */
 	public function processRepayableForCustomer($customer)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('processContractsRepayableForCustomerId', ['customerid' => $customerId]);
 	}
@@ -86,7 +91,7 @@ class Contract extends Api
 	 */
 	public function processRepayableContract($contract)
 	{
-		$contractId = ($contract instanceof CustomerType) ? $contract->getId() : $contract;
+		$contractId = Type::getId($contract);
 
 		return $this->call('processContractRepayableNow', ['contractid' => $contractId]);
 	}
@@ -97,6 +102,8 @@ class Contract extends Api
 	 * @param Filter[] $filter
 	 *
 	 * @return int
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.3
 	 */
 	public function count($filter = null)
 	{
@@ -109,6 +116,8 @@ class Contract extends Api
 	 * @param int|ContractType $contract
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.4
 	 */
 	public function enable($contract)
 	{
@@ -121,6 +130,8 @@ class Contract extends Api
 	 * @param int|ContractType $contract
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.5
 	 */
 	public function disable($contract)
 	{
@@ -134,10 +145,12 @@ class Contract extends Api
 	 * @param BasePosition $position
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.6
 	 */
 	public function createPosition($contract, BasePosition $position)
 	{
-		$contractId = ($contract instanceof ContractType) ? $contract->getId() : $contract;
+		$contractId = Type::getId($contract);
 
 		return $this->call('createContractPosition', ['contractid' => $contractId, 'data' => $position]);
 	}
@@ -149,10 +162,12 @@ class Contract extends Api
 	 * @param \Rokde\Gsales\Api\Types\Contract\Position $position
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.7
 	 */
 	public function updatePosition($contract, Position $position)
 	{
-		$contractId = ($contract instanceof ContractType) ? $contract->getId() : $contract;
+		$contractId = Type::getId($contract);
 		$positionId = $position->getId();
 
 		return $this->call('updateContractPosition', ['contractid' => $contractId, 'positionid' => $positionId, 'data' => $position]);
@@ -165,11 +180,13 @@ class Contract extends Api
 	 * @param int|\Rokde\Gsales\Api\Types\Contract\Position $position
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.8
 	 */
 	public function deletePosition($contract, $position)
 	{
-		$contractId = ($contract instanceof ContractType) ? $contract->getId() : $contract;
-		$positionId = ($position instanceof Position) ? $position->getId() : $position;
+		$contractId = Type::getId($contract);
+		$positionId = Type::getId($position);
 
 		return $this->call('deleteContractPosition', ['contractid' => $contractId, 'positionid' => $positionId]);
 	}
@@ -180,10 +197,12 @@ class Contract extends Api
 	 * @param int|ContractType $contract
 	 *
 	 * @return bool
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.9
 	 */
 	public function delete($contract)
 	{
-		$contractId = ($contract instanceof ContractType) ? $contract->getId() : $contract;
+		$contractId = Type::getId($contract);
 
 		return $this->call('deleteContract', ['contractid' => $contractId]);
 	}
@@ -195,10 +214,12 @@ class Contract extends Api
 	 * @param CreateContract $contract
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.10
 	 */
 	public function createForCustomer($customer, CreateContract $contract)
 	{
-		$customerId = ($customer instanceof CustomerType) ? $customer->getId() : $customer;
+		$customerId = Type::getId($customer);
 
 		return $this->call('createContractForCustomer', ['customerid' => $customerId, 'data' => $contract]);
 	}
@@ -210,10 +231,12 @@ class Contract extends Api
 	 * @param UpdateContract $data
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.11
 	 */
 	public function update($contract, UpdateContract $data)
 	{
-		$contractId = ($contract instanceof ContractType) ? $contract->getId() : $contract;
+		$contractId = Type::getId($contract);
 
 		return $this->call('updateContract', ['contractid' => $contractId, 'data' => $data]);
 	}
@@ -226,11 +249,30 @@ class Contract extends Api
 	 * @param int $year
 	 *
 	 * @return ContractType
+	 *
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.12
 	 */
 	public function updateEndDate($contract, $month, $year)
 	{
-		$contractId = ($contract instanceof ContractType) ? $contract->getId() : $contract;
+		$contractId = Type::getId($contract);
 
 		return $this->call('updateContractEndDate', ['contractid' => $contractId, 'month' => $month, 'year' => $year]);
+	}
+
+	/**
+	 * removes end date of contract
+	 *
+	 * @param int|ContractType $contract
+	 *
+	 * @return ContractType
+	 *
+	 * @since api 2.3
+	 * @see http://www.gsales.de/api_documentation.pdf#9.5.13
+	 */
+	public function removeEndDate($contract)
+	{
+		$contractId = Type::getId($contract);
+
+		return $this->call('updateContractEndDate', ['contractid' => $contractId]);
 	}
 }

@@ -1,6 +1,7 @@
 <?php namespace Rokde\Gsales\Api\Types;
 
 use DateTime;
+use Rokde\Gsales\Api\Contracts\IdentifierInterface;
 
 /**
  * Class Type
@@ -34,5 +35,20 @@ abstract class Type
 		}
 
 		return $value;
+	}
+
+	/**
+	 * returns the id for given object
+	 *
+	 * @param int|IdentifierInterface $type
+	 *
+	 * @return int
+	 */
+	public static function getId($type)
+	{
+		if ($type instanceof IdentifierInterface)
+			return $type->getId();
+
+		return $type;
 	}
 }
