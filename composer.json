@@ -22,5 +22,9 @@
 			"Rokde\\": "src/rokde"
 		}
 	},
-    "minimum-stability": "dev"
+	"suggest": {
+		"illuminate/support": "Allows using within laravel framework.",
+		"illuminate/config": "Necessary for the use within laravel framework."
+	},
+    "minimum-stability": "stable"
 }
