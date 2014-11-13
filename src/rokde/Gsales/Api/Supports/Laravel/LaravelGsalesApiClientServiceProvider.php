@@ -35,10 +35,13 @@ class LaravelGsalesApiClientServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app->bindShared('gsales-api-client', function () {
-			$wsdl = Config::get('gsales-api-client::wsdl');
-			$apikey = Config::get('gsales-api-client::apikey');
+		$wsdl = Config::get('gsales-api-client::gsales.wsdl');
+		$apikey = Config::get('gsales-api-client::gsales.apikey');
 
+		if (empty($wsdl) || empty($apikey))
+			return;
+
+		$this->app->bindShared('gsales-api-client', function () use ($wsdl, $apikey) {
 			return new Client($wsdl, $apikey);
 		});
 	}
