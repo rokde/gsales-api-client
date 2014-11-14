@@ -264,6 +264,18 @@ Following methods are available for the queue context:
  - `createInvoice($customer)`
  - `createInvoices()`
 
+##### Create a queue entry
+
+	$queueEntry = new \Rokde\Gsales\Api\Types\Queue\Base();
+	$queueEntry->setPositionText('Test')
+		->setCustomerId(37)
+		->setPrice(1.23)
+		->setQuantity(1)
+		->setApproval(0)
+		->setUnit('x')
+		->setDiscount(0)
+		->setTax(0.19);
+	$apiClient->queue()->create($queueEntry);
 
 #### Refund
 
