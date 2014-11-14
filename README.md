@@ -51,6 +51,14 @@ Following methods are available for the article context:
  - `delete($article)`
 
 
+##### Create an article
+
+	$article = new \Rokde\Gsales\Api\Types\Article\Base();
+	$article->setTitle('Projectmanagement')
+		->setRetailPrice(120);
+	$apiClient->article()->create($article);
+
+
 #### Authentication
 
 All authentication related commands are grouped in the `Authentication` context.
@@ -136,6 +144,16 @@ Following methods are available for the customer context:
  - `update($customer)`
  - `updateProposal($customer)`
  - `delete($customer)`
+
+
+##### Fetch the number of customers
+
+	$apiClient->customer()->count();
+
+
+##### Fetch all customers
+
+	$apiClient->customer()->all()
 
 
 #### Document
@@ -264,6 +282,7 @@ Following methods are available for the queue context:
  - `createInvoice($customer)`
  - `createInvoices()`
 
+
 ##### Create a queue entry
 
 	$queueEntry = new \Rokde\Gsales\Api\Types\Queue\Base();
@@ -276,6 +295,7 @@ Following methods are available for the queue context:
 		->setDiscount(0)
 		->setTax(0.19);
 	$apiClient->queue()->create($queueEntry);
+
 
 #### Refund
 
