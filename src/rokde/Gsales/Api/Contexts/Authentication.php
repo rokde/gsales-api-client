@@ -56,7 +56,7 @@ class Authentication extends Api
 	 */
 	public function changePassword($customer, $newPassword)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 		$password = $this->prepareMd5PasswordParameter($newPassword);
 
 		return $this->call('changeCustomerFrontendPassword', ['customerid' => $customerId, 'md5password' => $password]);
@@ -145,7 +145,7 @@ class Authentication extends Api
 	 */
 	public function enableLoginById($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('enableCustomerFrontendLoginById', ['customerid' => $customerId]);
 	}
@@ -193,7 +193,7 @@ class Authentication extends Api
 	 */
 	public function disableLoginById($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('disableCustomerFrontendLoginById', ['customerid' => $customerId]);
 	}

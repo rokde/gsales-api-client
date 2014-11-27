@@ -88,7 +88,7 @@ class User extends Api
 	 */
 	public function delete($user)
 	{
-		$userId = Type::getId($user);
+		$userId = Type::getIdentifier($user);
 
 		return $this->call('deleteUser', ['userid' => $userId]);
 	}
@@ -136,7 +136,7 @@ class User extends Api
 	 */
 	public function roles($user)
 	{
-		$userId = Type::getId($user);
+		$userId = Type::getIdentifier($user);
 
 		return $this->call('getRolesOfUser', ['userid' => $userId]);
 	}
@@ -151,8 +151,8 @@ class User extends Api
 	 */
 	public function addRole($user, $role)
 	{
-		$userId = Type::getId($user);
-		$roleId = Type::getId($role);
+		$userId = Type::getIdentifier($user);
+		$roleId = Type::getIdentifier($role);
 
 		return $this->call('addRoleToUser', ['userid' => $userId, 'roleid' => $roleId]);
 	}
@@ -167,8 +167,8 @@ class User extends Api
 	 */
 	public function removeRole($user, $role)
 	{
-		$userId = Type::getId($user);
-		$roleId = Type::getId($role);
+		$userId = Type::getIdentifier($user);
+		$roleId = Type::getIdentifier($role);
 
 		return $this->call('removeRoleFromUser', ['userid' => $userId, 'roleid' => $roleId]);
 	}

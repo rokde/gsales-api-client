@@ -114,7 +114,7 @@ class Customer extends Api
 	 */
 	public function delete($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('deleteCustomer', ['customerid' => $customerId]);
 	}

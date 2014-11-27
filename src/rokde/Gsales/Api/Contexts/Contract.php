@@ -77,7 +77,7 @@ class Contract extends Api
 	 */
 	public function processRepayableForCustomer($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('processContractsRepayableForCustomerId', ['customerid' => $customerId]);
 	}
@@ -91,7 +91,7 @@ class Contract extends Api
 	 */
 	public function processRepayableContract($contract)
 	{
-		$contractId = Type::getId($contract);
+		$contractId = Type::getIdentifier($contract);
 
 		return $this->call('processContractRepayableNow', ['contractid' => $contractId]);
 	}
@@ -150,7 +150,7 @@ class Contract extends Api
 	 */
 	public function createPosition($contract, BasePosition $position)
 	{
-		$contractId = Type::getId($contract);
+		$contractId = Type::getIdentifier($contract);
 
 		return $this->call('createContractPosition', ['contractid' => $contractId, 'data' => $position]);
 	}
@@ -167,7 +167,7 @@ class Contract extends Api
 	 */
 	public function updatePosition($contract, Position $position)
 	{
-		$contractId = Type::getId($contract);
+		$contractId = Type::getIdentifier($contract);
 		$positionId = $position->getId();
 
 		return $this->call('updateContractPosition', ['contractid' => $contractId, 'positionid' => $positionId, 'data' => $position]);
@@ -185,8 +185,8 @@ class Contract extends Api
 	 */
 	public function deletePosition($contract, $position)
 	{
-		$contractId = Type::getId($contract);
-		$positionId = Type::getId($position);
+		$contractId = Type::getIdentifier($contract);
+		$positionId = Type::getIdentifier($position);
 
 		return $this->call('deleteContractPosition', ['contractid' => $contractId, 'positionid' => $positionId]);
 	}
@@ -202,7 +202,7 @@ class Contract extends Api
 	 */
 	public function delete($contract)
 	{
-		$contractId = Type::getId($contract);
+		$contractId = Type::getIdentifier($contract);
 
 		return $this->call('deleteContract', ['contractid' => $contractId]);
 	}
@@ -219,7 +219,7 @@ class Contract extends Api
 	 */
 	public function createForCustomer($customer, CreateContract $contract)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('createContractForCustomer', ['customerid' => $customerId, 'data' => $contract]);
 	}
@@ -236,7 +236,7 @@ class Contract extends Api
 	 */
 	public function update($contract, UpdateContract $data)
 	{
-		$contractId = Type::getId($contract);
+		$contractId = Type::getIdentifier($contract);
 
 		return $this->call('updateContract', ['contractid' => $contractId, 'data' => $data]);
 	}
@@ -254,7 +254,7 @@ class Contract extends Api
 	 */
 	public function updateEndDate($contract, $month, $year)
 	{
-		$contractId = Type::getId($contract);
+		$contractId = Type::getIdentifier($contract);
 
 		return $this->call('updateContractEndDate', ['contractid' => $contractId, 'month' => $month, 'year' => $year]);
 	}
@@ -271,7 +271,7 @@ class Contract extends Api
 	 */
 	public function removeEndDate($contract)
 	{
-		$contractId = Type::getId($contract);
+		$contractId = Type::getIdentifier($contract);
 
 		return $this->call('updateContractEndDate', ['contractid' => $contractId]);
 	}

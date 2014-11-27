@@ -89,7 +89,7 @@ class Queue extends Api
 	 */
 	public function delete($queueEntry)
 	{
-		$queueId = Type::getId($queueEntry);
+		$queueId = Type::getIdentifier($queueEntry);
 
 		return $this->call('deleteQueueEntry', ['queueid' => $queueId]);
 	}
@@ -139,7 +139,7 @@ class Queue extends Api
 	 */
 	public function createInvoice($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('createInvoiceFromQueueForCustomer', ['customerid' => $customerId]);
 	}

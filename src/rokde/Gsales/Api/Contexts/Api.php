@@ -128,7 +128,7 @@ class Api
 	 */
 	protected function getEntity($method, $paramName, $identifier)
 	{
-		$id = Type::getId($identifier);
+		$id = Type::getIdentifier($identifier);
 
 		return $this->call($method, [$paramName => $id]);
 	}
@@ -177,7 +177,7 @@ class Api
 	 */
 	protected function modifyState($method, $paramName, $identifier)
 	{
-		$id = Type::getId($identifier);
+		$id = Type::getIdentifier($identifier);
 
 		return $this->call($method, [$paramName => $id]);
 	}

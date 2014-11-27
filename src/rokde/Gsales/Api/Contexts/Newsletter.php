@@ -64,7 +64,7 @@ class Newsletter extends Api
 	 */
 	public function recipients($newsletter)
 	{
-		$newsletterId = Type::getId($newsletter);
+		$newsletterId = Type::getIdentifier($newsletter);
 
 		return $this->call('getNewsletterRecipients', ['newsletterid' => $newsletterId]);
 	}
@@ -104,7 +104,7 @@ class Newsletter extends Api
 	 */
 	public function delete($newsletter)
 	{
-		$newsletterId = Type::getId($newsletter);
+		$newsletterId = Type::getIdentifier($newsletter);
 
 		return $this->call('deleteNewsletter', ['newsletterid' => $newsletterId]);
 	}
@@ -119,7 +119,7 @@ class Newsletter extends Api
 	 */
 	public function addRecipient($newsletter, BaseRecipient $recipient)
 	{
-		$newsletterId = Type::getId($newsletter);
+		$newsletterId = Type::getIdentifier($newsletter);
 
 		return $this->call('addNewsletterRecipient', ['newsletterid' => $newsletterId, 'data' => $recipient]);
 	}
@@ -134,8 +134,8 @@ class Newsletter extends Api
 	 */
 	public function addCustomerAsRecipient($newsletter, $customer)
 	{
-		$newsletterId = Type::getId($newsletter);
-		$customerId = Type::getId($customer);
+		$newsletterId = Type::getIdentifier($newsletter);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('addNewsletterRecipientByCustomerId', ['newsletterid' => $newsletterId, 'customerid' => $customerId]);
 	}
@@ -150,8 +150,8 @@ class Newsletter extends Api
 	 */
 	public function removeRecipient($newsletter, $recipient)
 	{
-		$newsletterId = Type::getId($newsletter);
-		$recipientId = Type::getId($recipient);
+		$newsletterId = Type::getIdentifier($newsletter);
+		$recipientId = Type::getIdentifier($recipient);
 
 		return $this->call('removeNewsletterRecipient', ['newsletterid' => $newsletterId, 'recipientid' => $recipientId]);
 	}
@@ -165,7 +165,7 @@ class Newsletter extends Api
 	 */
 	public function spool($newsletter)
 	{
-		$newsletterId = Type::getId($newsletter);
+		$newsletterId = Type::getIdentifier($newsletter);
 
 		return $this->call('spoolNewsletter', ['newsletterid' => $newsletterId]);
 	}

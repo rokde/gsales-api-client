@@ -87,7 +87,7 @@ class Article extends Api
 	 */
 	public function delete($article)
 	{
-		$articleId = Type::getId($article);
+		$articleId = Type::getIdentifier($article);
 
 		return $this->call('deleteArticle', ['articleid' => $articleId]);
 	}

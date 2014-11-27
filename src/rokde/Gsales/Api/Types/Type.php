@@ -44,7 +44,7 @@ abstract class Type
 	 *
 	 * @return int
 	 */
-	public static function getId($type)
+	public static function getIdentifier($type)
 	{
 		if ($type instanceof IdentifierInterface)
 			return $type->getId();

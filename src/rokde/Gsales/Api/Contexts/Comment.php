@@ -58,7 +58,7 @@ class Comment extends Api
 	 */
 	public function delete($comment)
 	{
-		$commentId = Type::getId($comment);
+		$commentId = Type::getIdentifier($comment);
 
 		return $this->call('deleteComment', ['commentid' => $commentId]);
 	}

@@ -66,7 +66,7 @@ class Mailspool extends Api {
 	 */
 	public function duplicate($mailspool)
 	{
-		$mailSpoolId = Type::getId($mailspool);
+		$mailSpoolId = Type::getIdentifier($mailspool);
 
 		return $this->call('duplicateMailspoolEntry', ['mailspoolid' => $mailSpoolId]);
 	}
@@ -125,7 +125,7 @@ class Mailspool extends Api {
 	 */
 	public function delete($mailspool)
 	{
-		$mailSpoolId = Type::getId($mailspool);
+		$mailSpoolId = Type::getIdentifier($mailspool);
 
 		return $this->call('updateMailspoolEntry', ['mailspoolid' => $mailSpoolId]);
 	}
@@ -138,7 +138,7 @@ class Mailspool extends Api {
 	 */
 	public function readByRecipient($mailspool)
 	{
-		$mailSpoolId = Type::getId($mailspool);
+		$mailSpoolId = Type::getIdentifier($mailspool);
 
 		return $this->call('setMailspoolReadForEntry', ['mailspoolid' => $mailSpoolId]);
 	}

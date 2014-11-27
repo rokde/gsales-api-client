@@ -114,7 +114,7 @@ class Offer extends Api
 	 */
 	public function createPosition($offer, BasePosition $position)
 	{
-		$offerId = Type::getId($offer);
+		$offerId = Type::getIdentifier($offer);
 
 		return $this->call('createOfferPosition', ['offerid' => $offerId, 'data' => $position]);
 	}
@@ -129,7 +129,7 @@ class Offer extends Api
 	 */
 	public function updatePosition($offer, Position $position)
 	{
-		$offerId = Type::getId($offer);
+		$offerId = Type::getIdentifier($offer);
 		$positionId = $position->getId();
 
 		return $this->call('updateOfferPosition', ['offerid' => $offerId, 'positionid' => $positionId, 'data' => $position]);
@@ -145,8 +145,8 @@ class Offer extends Api
 	 */
 	public function deletePosition($offer, $position)
 	{
-		$offerId = Type::getId($offer);
-		$positionId = Type::getId($position);
+		$offerId = Type::getIdentifier($offer);
+		$positionId = Type::getIdentifier($position);
 
 		return $this->call('deleteOfferPosition', ['offerid' => $offerId, 'positionid' => $positionId]);
 	}
@@ -160,7 +160,7 @@ class Offer extends Api
 	 */
 	public function delete($offer)
 	{
-		$offerId = Type::getId($offer);
+		$offerId = Type::getIdentifier($offer);
 
 		return $this->call('deleteOffer', ['offerid' => $offerId]);
 	}
@@ -174,7 +174,7 @@ class Offer extends Api
 	 */
 	public function createForCustomer($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('createOfferForCustomer', ['customerid' => $customerId]);
 	}
@@ -215,7 +215,7 @@ class Offer extends Api
 	 */
 	public function addToMailspool($offer)
 	{
-		$offerId = Type::getId($offer);
+		$offerId = Type::getIdentifier($offer);
 
 		return $this->call('updateOffer', ['offerid' => $offerId]);
 	}
@@ -229,7 +229,7 @@ class Offer extends Api
 	 */
 	public function pdf($offer)
 	{
-		$offerId = Type::getId($offer);
+		$offerId = Type::getIdentifier($offer);
 
 		return $this->call('getOfferPDF', ['offerid' => $offerId]);
 	}

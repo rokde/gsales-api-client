@@ -102,7 +102,7 @@ class Invoice extends Api
 	 */
 	public function createPosition($invoice, BasePosition $position)
 	{
-		$invoiceId = Type::getId($invoice);
+		$invoiceId = Type::getIdentifier($invoice);
 
 		return $this->call('createInvoicePosition', ['invoiceid' => $invoiceId, 'data' => $position]);
 	}
@@ -117,7 +117,7 @@ class Invoice extends Api
 	 */
 	public function updatePosition($invoice, Position $position)
 	{
-		$invoiceId = Type::getId($invoice);
+		$invoiceId = Type::getIdentifier($invoice);
 		$positionId = $position->getId();
 
 		return $this->call('updateInvoicePosition', ['invoiceid' => $invoiceId, 'positionid' => $positionId, 'data' => $position]);
@@ -133,8 +133,8 @@ class Invoice extends Api
 	 */
 	public function deletePosition($invoice, $position)
 	{
-		$invoiceId = Type::getId($invoice);
-		$positionId = Type::getId($position);
+		$invoiceId = Type::getIdentifier($invoice);
+		$positionId = Type::getIdentifier($position);
 
 		return $this->call('deleteInvoicePosition', ['invoiceid' => $invoiceId, 'positionid' => $positionId]);
 	}
@@ -148,7 +148,7 @@ class Invoice extends Api
 	 */
 	public function delete($invoice)
 	{
-		$invoiceId = Type::getId($invoice);
+		$invoiceId = Type::getIdentifier($invoice);
 
 		return $this->call('deleteInvoice', ['invoiceid' => $invoiceId]);
 	}
@@ -162,7 +162,7 @@ class Invoice extends Api
 	 */
 	public function createForCustomer($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('createInvoiceForCustomer', ['customerid' => $customerId]);
 	}
@@ -202,7 +202,7 @@ class Invoice extends Api
 	 */
 	public function addToMailspool($invoice)
 	{
-		$invoiceId = Type::getId($invoice);
+		$invoiceId = Type::getIdentifier($invoice);
 
 		return $this->call('addInvoiceToMailspool', ['invoiceid' => $invoiceId]);
 	}
@@ -216,7 +216,7 @@ class Invoice extends Api
 	 */
 	public function pdf($invoice)
 	{
-		$invoiceId = Type::getId($invoice);
+		$invoiceId = Type::getIdentifier($invoice);
 
 		return $this->call('getInvoicePDF', ['invoiceid' => $invoiceId]);
 	}

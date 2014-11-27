@@ -102,7 +102,7 @@ class Refund extends Api
 	 */
 	public function createPosition($refund, BasePosition $position)
 	{
-		$refundId = Type::getId($refund);
+		$refundId = Type::getIdentifier($refund);
 
 		return $this->call('createRefundPosition', ['refundid' => $refundId, 'data' => $position]);
 	}
@@ -117,7 +117,7 @@ class Refund extends Api
 	 */
 	public function updatePosition($refund, Position $position)
 	{
-		$refundId = Type::getId($refund);
+		$refundId = Type::getIdentifier($refund);
 		$positionId = $position->getId();
 
 		return $this->call('updateRefundPosition', ['refundid' => $refundId, 'positionid' => $positionId, 'data' => $position]);
@@ -133,7 +133,7 @@ class Refund extends Api
 	 */
 	public function deletePosition($refund, Position $position)
 	{
-		$refundId = Type::getId($refund);
+		$refundId = Type::getIdentifier($refund);
 		$positionId = $position->getId();
 
 		return $this->call('deleteRefundPosition', ['refundid' => $refundId, 'positionid' => $positionId]);
@@ -148,7 +148,7 @@ class Refund extends Api
 	 */
 	public function delete($refund)
 	{
-		$refundId = Type::getId($refund);
+		$refundId = Type::getIdentifier($refund);
 
 		return $this->call('deleteRefund', ['refundid' => $refundId]);
 	}
@@ -162,7 +162,7 @@ class Refund extends Api
 	 */
 	public function createForCustomer($customer)
 	{
-		$customerId = Type::getId($customer);
+		$customerId = Type::getIdentifier($customer);
 
 		return $this->call('createRefundForCustomer', ['customerid' => $customerId]);
 	}
@@ -202,7 +202,7 @@ class Refund extends Api
 	 */
 	public function addToMailspool($refund)
 	{
-		$refundId = Type::getId($refund);
+		$refundId = Type::getIdentifier($refund);
 
 		return $this->call('updateOffer', ['refundid' => $refundId]);
 	}
@@ -216,7 +216,7 @@ class Refund extends Api
 	 */
 	public function pdf($refund)
 	{
-		$refundId = Type::getId($refund);
+		$refundId = Type::getIdentifier($refund);
 
 		return $this->call('getOfferPDF', ['refundid' => $refundId]);
 	}
