@@ -11,35 +11,30 @@ use Rokde\Gsales\Api\Types\Base\Filterable;
 class BaseFilterable extends Filterable
 {
 	/**
-	 * @var string date(Y-m-d)
+	 * @var int
 	 */
 	protected $validuntil;
 
 	/**
-	 * sets valid until
+	 * sets valid until in days
 	 *
-	 * @param string $validuntil
+	 * @param int $dayCount
 	 *
 	 * @return $this
 	 */
-	public function setValidUntil($validuntil)
+	public function setValidUntil($dayCount)
 	{
-		$this->validuntil = $validuntil;
+		$this->validuntil = $dayCount;
 		return $this;
 	}
 
 	/**
 	 * returns Valid until
 	 *
-	 * @param bool $formatted
-	 *
-	 * @return string|DateTime
+	 * @return int
 	 */
-	public function getValidUntil($formatted = true)
+	public function getValidUntil()
 	{
-		if ($formatted)
-			return DateTime::createFromFormat('Y-m-d', $this->validuntil)->setTime(0, 0, 0);
-
 		return $this->validuntil;
 	}
 }
