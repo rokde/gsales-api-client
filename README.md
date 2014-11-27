@@ -17,7 +17,7 @@ We support API version 2.3 (published on 20th of August 2014).
 Add to your composer.json following lines
 
 	"require": {
-		"rokde/gsales-client-api": "1.*"
+		"rokde/gsales-api-client": "~1.0"
 	}
 
 ### Using in Vanilla PHP
