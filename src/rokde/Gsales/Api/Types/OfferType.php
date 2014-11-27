@@ -25,7 +25,7 @@ class OfferType extends Type implements IdentifierInterface
 	/**
 	 * @var OfferSum
 	 */
-	private $sum;
+	private $summ;
 
 	/**
 	 * returns the id of the offer
@@ -42,7 +42,7 @@ class OfferType extends Type implements IdentifierInterface
 	 */
 	public function setSum(OfferSum $sum)
 	{
-		$this->sum = $sum;
+		$this->summ = $sum;
 	}
 
 	/**
@@ -50,7 +50,7 @@ class OfferType extends Type implements IdentifierInterface
 	 */
 	public function getSum()
 	{
-		return $this->sum;
+		return $this->summ;
 	}
 
 	/**
