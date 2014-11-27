@@ -554,7 +554,7 @@ class Filterable extends Type implements IdentifierInterface
 	/**
 	 * sets print contact person
 	 *
-	 * @param int $print_contactperson
+	 * @param bool $print_contactperson
 	 *
 	 * @return $this
 	 */
@@ -605,12 +605,12 @@ class Filterable extends Type implements IdentifierInterface
 	/**
 	 * sets status_id
 	 *
-	 * @param \Rokde\Gsales\Api\Contracts\OfferStatus $status
+	 * @param int $status you can use \Rokde\Gsales\Api\Contracts\OfferStatus constants
 	 *
 	 * @internal param int $status_id
 	 * @return $this
 	 */
-	public function setStatus(OfferStatus $status)
+	public function setStatus($status)
 	{
 		$this->status_id = $status;
 		return $this;

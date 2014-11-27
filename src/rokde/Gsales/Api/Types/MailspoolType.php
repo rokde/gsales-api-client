@@ -296,11 +296,11 @@ class MailspoolType extends Type implements IdentifierInterface
 	/**
 	 * sets mailformat
 	 *
-	 * @param int|\Rokde\Gsales\Api\Contracts\MailFormat $mailformat
+	 * @param int $mailformat you can use \Rokde\Gsales\Api\Contracts\MailFormat constants
 	 *
 	 * @return $this
 	 */
-	public function setMailFormat(MailFormat $mailformat)
+	public function setMailFormat($mailformat)
 	{
 		$this->mailformat = $mailformat;
 		return $this;

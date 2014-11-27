@@ -1,8 +1,6 @@
 <?php namespace Rokde\Gsales\Api\Contexts;
 
-use Rokde\Gsales\Api\Contracts\Sub;
 use Rokde\Gsales\Api\Types\Comment\Base;
-use Rokde\Gsales\Api\Types\CommentType;
 use Rokde\Gsales\Api\Types\Type;
 
 /**
@@ -27,12 +25,12 @@ class Comment extends Api
 	/**
 	 * returns all comments for a given record
 	 *
-	 * @param string|Sub $sub
+	 * @param string $sub you can use \Rokde\Gsales\Api\Contracts\Sub constants
 	 * @param int $recordId
 	 *
 	 * @return \Rokde\Gsales\Api\Types\CommentType[]
 	 */
-	public function all(Sub $sub, $recordId)
+	public function all($sub, $recordId)
 	{
 		return $this->call('getComments', ['sub' => $sub, 'recordid' => $recordId]);
 	}
