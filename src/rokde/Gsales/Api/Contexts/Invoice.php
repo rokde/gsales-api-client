@@ -1,9 +1,7 @@
 <?php namespace Rokde\Gsales\Api\Contexts;
 
-use Rokde\Gsales\Api\Types\CustomerType;
 use Rokde\Gsales\Api\Types\File;
 use Rokde\Gsales\Api\Types\Filter;
-use Rokde\Gsales\Api\Types\InvoiceType;
 use Rokde\Gsales\Api\Types\Invoice\Base;
 use Rokde\Gsales\Api\Types\Invoice\BasePosition;
 use Rokde\Gsales\Api\Types\Invoice\Position;
@@ -182,11 +180,11 @@ class Invoice extends Api
 	/**
 	 * creates an invoice
 	 *
-	 * @param \Rokde\Gsales\Api\Types\InvoiceType $invoice
+	 * @param Base $invoice
 	 *
 	 * @return \Rokde\Gsales\Api\Types\InvoiceType
 	 */
-	public function update(InvoiceType $invoice)
+	public function update(Base $invoice)
 	{
 		$invoiceId = $invoice->getId();
 
