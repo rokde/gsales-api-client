@@ -260,6 +260,8 @@ Following methods are available for the offer context:
  - `update($offer)`
  - `addToMailspool($offer)`
  - `pdf($offer)`
+ - `convertToInvoice($offer, $invoiceApiContext)`
+ - `convertToInvoicePositions($offer, $invoice, $invoiceApiContext)`
 
 
 #### Queue
