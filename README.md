@@ -12,6 +12,28 @@ We support API version 2.3 (published on 20th of August 2014).
 
 ----
 
+## Table of contents
+
+1. [Installation](https://github.com/rokde/gsales-api-client#installation)
+2. [Contexts](https://github.com/rokde/gsales-api-client#contexts)
+	a. [Article](https://github.com/rokde/gsales-api-client#article)
+	b. [Authentication](https://github.com/rokde/gsales-api-client#authentication)
+	c. [Comment](https://github.com/rokde/gsales-api-client#comment)
+	d. [Configuration](https://github.com/rokde/gsales-api-client#configuration)
+	e. [Contract](https://github.com/rokde/gsales-api-client#contract)
+	f. [Customer](https://github.com/rokde/gsales-api-client#customer)
+	g. [Document](https://github.com/rokde/gsales-api-client#document)
+	h. [Invoice](https://github.com/rokde/gsales-api-client#invoice)
+	i. [Mailspool](https://github.com/rokde/gsales-api-client#mailspool)
+	j. [Newsletter](https://github.com/rokde/gsales-api-client#newsletter)
+	k. [Offer](https://github.com/rokde/gsales-api-client#offer)
+	l. [Queue](https://github.com/rokde/gsales-api-client#queue)
+	m. [Refund](https://github.com/rokde/gsales-api-client#refund)
+	n. [User](https://github.com/rokde/gsales-api-client#user)
+3. [Using in Frameworks](https://github.com/rokde/gsales-api-client#using-in-frameworks)
+	a. [Using in Laravel 4](https://github.com/rokde/gsales-api-client#using-in-laravel-4)
+	b. [Other Frameworks](https://github.com/rokde/gsales-api-client#other-frameworks)
+
 ## Installation
 
 Add to your composer.json following lines
@@ -348,7 +370,7 @@ Following methods are available for the user context:
 
 ### Using in Frameworks
 
-#### Using in Laravel 4.x
+#### Using in Laravel 4
 
 After installing the package you have to add the following line to your `providers` Array in your app.php:
 
