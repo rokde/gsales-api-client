@@ -1,6 +1,7 @@
 <?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
+use Rokde\Gsales\Api\Contracts\OfferStatus;
 use Rokde\Gsales\Api\Types\Offer\Base as OfferBase;
 use Rokde\Gsales\Api\Types\Offer\Position;
 use Rokde\Gsales\Api\Types\Offer\Sum as OfferSum;
@@ -104,5 +105,25 @@ class OfferType extends Type implements IdentifierInterface
 		$this->pos[] = $position;
 
 		return $this;
+	}
+
+	/**
+	 * is the offer open
+	 *
+	 * @return bool
+	 */
+	public function isOpen()
+	{
+		return $this->getBase()->getStatus() === OfferStatus::OPEN;
+	}
+
+	/**
+	 * is the offer paid
+	 *
+	 * @return bool
+	 */
+	public function isPaid()
+	{
+		return $this->getBase()->getStatus() >= OfferStatus::BILLED;
 	}
 }

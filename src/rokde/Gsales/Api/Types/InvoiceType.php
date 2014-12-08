@@ -1,6 +1,7 @@
 <?php namespace Rokde\Gsales\Api\Types;
 
 use Rokde\Gsales\Api\Contracts\IdentifierInterface;
+use rokde\Gsales\Api\Contracts\InvoiceStatus;
 use Rokde\Gsales\Api\Types\Invoice\Base;
 use Rokde\Gsales\Api\Types\Invoice\DunningAction;
 use Rokde\Gsales\Api\Types\Invoice\Position;
@@ -88,5 +89,25 @@ class InvoiceType extends Type implements IdentifierInterface
 	public function getId()
 	{
 		return $this->getBase()->getId();
+	}
+
+	/**
+	 * is the invoice open
+	 *
+	 * @return bool
+	 */
+	public function isOpen()
+	{
+		return $this->getBase()->getStatus() === InvoiceStatus::OPEN;
+	}
+
+	/**
+	 * is the invoice paid
+	 *
+	 * @return bool
+	 */
+	public function isPaid()
+	{
+		return $this->getBase()->getStatus() >= InvoiceStatus::BILLED;
 	}
 }
