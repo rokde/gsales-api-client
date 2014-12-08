@@ -21,4 +21,9 @@ interface OfferStatus
 	 * an offer was approved
 	 */
 	const APPROVED = 2;
+
+	/**
+	 * an offer was billed
+	 */
+	const BILLED = 3;
 }
