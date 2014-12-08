@@ -1,4 +1,4 @@
-<?php namespace rokde\Gsales\Api\Contracts;
+<?php namespace Rokde\Gsales\Api\Contracts;
 
 /**
  * Interface InvoiceStatus
