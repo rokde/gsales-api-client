@@ -137,7 +137,7 @@ class Position extends Type
 	}
 
 	/**
-	 * sets tax
+	 * sets tax, uses automatically not the default tax anymore
 	 *
 	 * @param float $tax
 	 *
@@ -145,7 +145,13 @@ class Position extends Type
 	 */
 	public function setTax($tax)
 	{
+		if ($tax < 1)
+			$tax *= 100;
+
 		$this->tax = $tax;
+
+		$this->useDefaultTax(false);
+
 		return $this;
 	}
 
@@ -187,7 +193,6 @@ class Position extends Type
 	 *
 	 * @param bool $flag
 	 *
-	 * @internal param bool $useDefaultTax
 	 * @return $this
 	 */
 	public function useDefaultTax($flag = true)
