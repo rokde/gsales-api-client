@@ -607,7 +607,6 @@ class Filterable extends Type implements IdentifierInterface
 	 *
 	 * @param int $status you can use \Rokde\Gsales\Api\Contracts\OfferStatus constants
 	 *
-	 * @internal param int $status_id
 	 * @return $this
 	 */
 	public function setStatus($status)
@@ -619,7 +618,6 @@ class Filterable extends Type implements IdentifierInterface
 	/**
 	 * returns Status
 	 *
-	 * @internal param int $status_id
 	 * @return int
 	 */
 	public function getStatus()
