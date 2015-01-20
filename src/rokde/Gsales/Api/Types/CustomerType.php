@@ -1020,6 +1020,8 @@ class CustomerType extends Type implements IdentifierInterface
 	public function setZip($zip)
 	{
 		$this->zip = $zip;
+
+        return $this;
 	}
 
 	/**
