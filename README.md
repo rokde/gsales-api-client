@@ -1,4 +1,4 @@
-# SOAP API Client for gSales
+# SOAP API Client for gSales test
 
 [![Latest Stable Version](https://poser.pugx.org/rokde/gsales-api-client/v/stable.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![Latest Unstable Version](https://poser.pugx.org/rokde/gsales-api-client/v/unstable.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![License](https://poser.pugx.org/rokde/gsales-api-client/license.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![Total Downloads](https://poser.pugx.org/rokde/gsales-api-client/downloads.svg)](https://packagist.org/packages/rokde/gsales-api-client)
 
