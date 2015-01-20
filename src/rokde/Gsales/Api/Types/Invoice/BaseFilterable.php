@@ -48,20 +48,24 @@ class BaseFilterable extends Filterable
 		return $this;
 	}
 
-	/**
-	 * returns DeliveryDate
-	 *
-	 * @param bool $formatted
-	 *
-	 * @return string
-	 */
-	public function getDeliveryDate($formatted = true)
-	{
-		if ($formatted)
-			return DateTime::createFromFormat('Y-m-d', $this->deliverydate)->setTime(0, 0, 0);
+    /**
+     * returns DeliveryDate
+     *
+     * @param bool $formatted
+     *
+     * @return string
+     */
+    public function getDeliveryDate($formatted = true)
+    {
+        if ($formatted) {
+            $timestamp = strtotime($this->deliverydate);
+            $datetime = new DateTime();
+            $datetime->setTimestamp($timestamp);
+            return $datetime->format('Y-m-d');
+        }
 
-		return $this->deliverydate;
-	}
+        return $this->deliverydate;
+    }
 
 	/**
 	 * sets mediafinanz file
