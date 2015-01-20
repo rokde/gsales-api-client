@@ -861,6 +861,8 @@ class CustomerType extends Type implements IdentifierInterface
 	public function setLastname($lastname)
 	{
 		$this->lastname = $lastname;
+
+        return $this;
 	}
 
 	/**
@@ -893,6 +895,8 @@ class CustomerType extends Type implements IdentifierInterface
 	public function setPhone($phone)
 	{
 		$this->phone = $phone;
+
+        return $this;
 	}
 
 	/**
@@ -920,6 +924,8 @@ class CustomerType extends Type implements IdentifierInterface
 	public function setProposedChanges($proposed_changes)
 	{
 		$this->proposed_changes = $proposed_changes;
+
+        return $this;
 	}
 
 	/**
@@ -956,6 +962,8 @@ class CustomerType extends Type implements IdentifierInterface
 	public function setSepaRef($sepa_ref)
 	{
 		$this->sepa_ref = $sepa_ref;
+
+        return $this;
 	}
 
 	/**
@@ -972,6 +980,8 @@ class CustomerType extends Type implements IdentifierInterface
 	public function setTaxnumber($taxnumber)
 	{
 		$this->taxnumber = $taxnumber;
+
+        return $this;
 	}
 
 	/**
@@ -988,6 +998,8 @@ class CustomerType extends Type implements IdentifierInterface
 	public function setTitle($title)
 	{
 		$this->title = $title;
+
+        return $this;
 	}
 
 	/**
