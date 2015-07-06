@@ -17,7 +17,7 @@ class Client extends Api
 	 *
 	 * @var array
 	 */
-	static protected $contexts = array();
+	protected $contexts = array();
 
 	/**
 	 * @param string $wsdl
@@ -31,9 +31,14 @@ class Client extends Api
 		} else {
 			$options['classmap'] = array_merge(static::classmap(), $options['classmap']);
 		}
+//
+//        $options = array_merge($options, array('proxy_host'     => "127.0.0.1",
+//            'proxy_port'     => 8080));
+
 
 		parent::__construct(new SoapClient($wsdl, $options), $apikey);
 	}
+
 
 	/**
 	 * returns a customer context
@@ -184,12 +189,12 @@ class Client extends Api
 	 */
 	protected function getContextInstance($context)
 	{
-		if ( ! isset(static::$contexts[$context])) {
+		if ( ! isset($this->contexts[$context])) {
 			$contextClass = self::CONTEXT_NAMESPACE . $context;
 
-			static::$contexts[$context] = new $contextClass($this->getClient(), $this->getApiKey());
+            $this->contexts[$context] = new $contextClass($this->getClient(), $this->getApiKey());
 		}
 
-		return static::$contexts[$context];
+		return $this->contexts[$context];
 	}
 }
