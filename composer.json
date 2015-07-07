@@ -1,13 +1,13 @@
 {
-    "name": "rokde/gsales-api-client",
+    "name": "opwoco/gsales-api-client",
 	"type": "library",
     "description": "SOAP Client for consumin gSales API",
 	"keywords": ["gsales", "api", "soap", "client", "php"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Robert Kummer",
-            "email": "rok@ipunkt.biz"
+            "name": "opwoco GmbH",
+            "email": "info@opwoco.de"
         }
     ],
     "require": {
@@ -16,11 +16,6 @@
     },
 	"require-dev": {
 		"symfony/console": "v2.3.12"
-	},
-	"autoload": {
-		"psr-4": {
-			"Rokde\\": "src/rokde"
-		}
 	},
 	"suggest": {
 		"illuminate/support": "Allows using within laravel framework.",
