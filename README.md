@@ -1,6 +1,6 @@
 # SOAP API Client for gSales
 
-[![Latest Stable Version](https://poser.pugx.org/rokde/gsales-api-client/v/stable.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![Latest Unstable Version](https://poser.pugx.org/rokde/gsales-api-client/v/unstable.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![License](https://poser.pugx.org/rokde/gsales-api-client/license.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![Total Downloads](https://poser.pugx.org/rokde/gsales-api-client/downloads.svg)](https://packagist.org/packages/rokde/gsales-api-client)
+[![Latest Stable Version](https://poser.pugx.org/rokde/gsales-api-client/v/stable.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![Latest Unstable Version](https://poser.pugx.org/rokde/gsales-api-client/v/unstable.svg)](https://packagist.org/packages/rokde/gsales-api-client) [![License](https://poser.pugx.org/rokde/gsales-api-client/license.svg)](http://rok.mit-license.org/) [![Total Downloads](https://poser.pugx.org/rokde/gsales-api-client/downloads.svg)](https://packagist.org/packages/rokde/gsales-api-client)
 
 ## A generic api client for the billing system gSales
 
