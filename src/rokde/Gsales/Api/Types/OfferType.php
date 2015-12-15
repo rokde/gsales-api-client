@@ -40,10 +40,14 @@ class OfferType extends Type implements IdentifierInterface
 
 	/**
 	 * @param OfferSum $sum
+	 *
+	 * @return $this
 	 */
 	public function setSum(OfferSum $sum)
 	{
 		$this->summ = $sum;
+
+		return $this;
 	}
 
 	/**
@@ -56,10 +60,14 @@ class OfferType extends Type implements IdentifierInterface
 
 	/**
 	 * @param OfferBase $base
+	 *
+	 * @return $this
 	 */
 	public function setBase(OfferBase $base)
 	{
 		$this->base = $base;
+
+		return $this;
 	}
 
 	/**

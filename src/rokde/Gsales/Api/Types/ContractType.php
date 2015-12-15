@@ -39,10 +39,14 @@ class ContractType extends Type implements IdentifierInterface
 
 	/**
 	 * @param Sum $sum
+	 *
+	 * @return $this
 	 */
 	public function setSum(Sum $sum)
 	{
 		$this->sum = $sum;
+
+		return $this;
 	}
 
 	/**
@@ -55,10 +59,14 @@ class ContractType extends Type implements IdentifierInterface
 
 	/**
 	 * @param Base $base
+	 *
+	 * @return $this
 	 */
 	public function setBase(Base $base)
 	{
 		$this->base = $base;
+
+		return $this;
 	}
 
 	/**
@@ -79,6 +87,7 @@ class ContractType extends Type implements IdentifierInterface
 	public function setPositions($pos)
 	{
 		$this->pos = $pos;
+
 		return $this;
 	}
 
