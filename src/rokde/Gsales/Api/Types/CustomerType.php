@@ -857,10 +857,14 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param string $lastname
+	 *
+	 * @return $this
 	 */
 	public function setLastname($lastname)
 	{
 		$this->lastname = $lastname;
+
+		return $this;
 	}
 
 	/**
@@ -889,10 +893,14 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param string $phone
+	 *
+	 * @return $this
 	 */
 	public function setPhone($phone)
 	{
 		$this->phone = $phone;
+
+		return $this;
 	}
 
 	/**
@@ -916,10 +924,14 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param string $proposed_changes
+	 *
+	 * @return $this
 	 */
 	public function setProposedChanges($proposed_changes)
 	{
 		$this->proposed_changes = $proposed_changes;
+
+		return $this;
 	}
 
 	/**
@@ -952,10 +964,14 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param string $sepa_ref
+	 *
+	 * @return $this
 	 */
 	public function setSepaRef($sepa_ref)
 	{
 		$this->sepa_ref = $sepa_ref;
+
+		return $this;
 	}
 
 	/**
@@ -968,10 +984,14 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param string $taxnumber
+	 *
+	 * @return $this
 	 */
 	public function setTaxnumber($taxnumber)
 	{
 		$this->taxnumber = $taxnumber;
+
+		return $this;
 	}
 
 	/**
@@ -984,10 +1004,14 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param string $title
+	 *
+	 * @return $this
 	 */
 	public function setTitle($title)
 	{
 		$this->title = $title;
+
+		return $this;
 	}
 
 	/**
@@ -1016,10 +1040,14 @@ class CustomerType extends Type implements IdentifierInterface
 
 	/**
 	 * @param string $zip
+	 *
+	 * @return $this
 	 */
 	public function setZip($zip)
 	{
 		$this->zip = $zip;
+
+		return $this;
 	}
 
 	/**
