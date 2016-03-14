@@ -166,6 +166,16 @@ class Client extends Api
 	}
 
 	/**
+	 * returns delivery context
+	 *
+	 * @return \Rokde\Gsales\Api\Contexts\Delivery
+	 */
+	public function delivery()
+	{
+		return $this->getContextInstance('Delivery');
+	}
+
+	/**
 	 * returns a configuration context
 	 *
 	 * @return \Rokde\Gsales\Api\Contexts\Configuration

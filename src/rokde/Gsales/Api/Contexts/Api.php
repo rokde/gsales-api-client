@@ -85,6 +85,12 @@ class Api
 			'InvoiceSumm' => $namespace . '\Types\Invoice\Sum',
 			'DunningAction' => $namespace . '\Types\Invoice\DunningAction',
 
+			'Delivery' => $namespace . '\Types\DeliveryType',
+			'DeliveryBase' => $namespace . '\Types\Delivery\Base',
+			'DeliveryBaseFilterable' => $namespace . '\Types\Delivery\BaseFilterable',
+			'DeliveryPosition' => $namespace . '\Types\Delivery\Position',
+			'DeliverySumm' => $namespace . '\Types\Delivery\Sum',
+
 			'Refund' => $namespace . '\Types\RefundType',
 			'RefundBase' => $namespace . '\Types\Refund\Base',
 			'RefundBaseFilterable' => $namespace . '\Types\Refund\BaseFilterable',
